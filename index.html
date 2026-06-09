@@ -9,16 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* ── Design tokens ─────────────────────────────── */
     :root {
-      --oak:        #2c4a2e;   /* deep forest green — primary */
+      --oak:        #2c4a2e;
       --oak-mid:    #3d6b40;
       --oak-light:  #e8efe8;
-      --gold:       #a8844a;   /* warm gold — accent */
+      --gold:       #a8844a;
       --gold-light: #f5efe2;
-      --stone:      #f7f5f1;   /* warm off-white — background */
-      --ink:        #1c2420;   /* near-black text */
-      --mist:       #6b7b6d;   /* muted text */
+      --stone:      #f7f5f1;
+      --ink:        #1c2420;
+      --mist:       #6b7b6d;
       --border:     rgba(44,74,46,0.12);
       --radius:     3px;
       --accent:     var(--gold);
@@ -27,486 +26,101 @@
       --border-color: var(--border);
       --text-muted: var(--mist);
     }
-
-    /* ── Reset & base ──────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      color: var(--ink);
-      background: var(--stone);
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    /* ── Typography ────────────────────────────────── */
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 500;
-      line-height: 1.15;
-      color: var(--oak);
-    }
+    body { font-family: 'Jost', sans-serif; font-weight: 400; color: var(--ink); background: var(--stone); line-height: 1.6; font-size: 16px; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; line-height: 1.15; color: var(--oak); }
     h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
     h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
     h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
     p  { line-height: 1.75; color: var(--ink); }
-
     a { color: inherit; text-decoration: none; }
-
-    /* ── Layout helpers ────────────────────────────── */
-    .container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
     .section { padding: 5rem 0; }
     .section-sm { padding: 3rem 0; }
-
-    /* ── Navigation ────────────────────────────────── */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(247,245,241,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow 0.3s;
-    }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,245,241,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
     .site-header.scrolled { box-shadow: 0 2px 24px rgba(28,36,32,0.08); }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .nav-logo-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--oak);
-      letter-spacing: 0.02em;
-    }
-    .nav-logo-sub {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mist);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--oak); }
-    .nav-links a.active { color: var(--oak); }
-    .nav-cta {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.6em 1.4em;
-      background: var(--oak);
-      color: #fff;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--oak); letter-spacing: 0.02em; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--oak); }
+    .nav-cta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.6em 1.4em; background: var(--oak); color: #fff; border-radius: var(--radius); transition: background 0.2s; }
     .nav-cta:hover { background: var(--oak-mid); }
-    .nav-mobile-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--oak);
-      padding: 0.25rem;
-    }
-
-    /* ── Hero ──────────────────────────────────────── */
-    .hero {
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 72px;
-    }
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 3rem 5rem 0;
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow-line {
-      width: 2rem;
-      height: 1px;
-      background: var(--gold);
-    }
-    .hero-eyebrow-text {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; color: var(--oak); padding: 0.25rem; }
+    .hero { min-height: 100svh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; }
+    .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 5rem 3rem 5rem 0; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .hero-eyebrow-line { width: 2rem; height: 1px; background: var(--gold); }
+    .hero-eyebrow-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
     .hero h1 { margin-bottom: 1.25rem; }
-    .hero-standfirst {
-      font-size: 1.05rem;
-      color: var(--mist);
-      max-width: 42ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85em 2em;
-      background: var(--oak);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
+    .hero-standfirst { font-size: 1.05rem; color: var(--mist); max-width: 42ch; margin-bottom: 2.5rem; line-height: 1.8; }
+    .hero-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85em 2em; background: var(--oak); color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius); transition: background 0.2s; }
     .btn-primary:hover { background: var(--oak-mid); }
-    .btn-secondary {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--oak);
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
-    }
+    .btn-secondary { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--oak); border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: opacity 0.2s; }
     .btn-secondary:hover { opacity: 0.7; }
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-    .hero-stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--oak);
-      line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mist);
-      margin-top: 0.35rem;
-    }
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-image-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--oak-light) 0%, #c8d9c8 100%);
-    }
-    .hero-image-pattern {
-      position: absolute;
-      inset: 0;
-      opacity: 0.06;
-      background-image: repeating-linear-gradient(
-        45deg,
-        var(--oak) 0px, var(--oak) 1px,
-        transparent 1px, transparent 12px
-      );
-    }
-    .hero-image-badge {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 2.5rem;
-      background: rgba(247,245,241,0.95);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      max-width: 220px;
-    }
-    .hero-badge-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-    .hero-badge-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--oak);
-      line-height: 1.3;
-    }
-
-    /* ── Section labels ────────────────────────────── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
-    }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--oak); line-height: 1; }
+    .hero-stat-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); margin-top: 0.35rem; }
+    .hero-image { position: relative; overflow: hidden; }
+    .hero-image-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--oak-light) 0%, #c8d9c8 100%); }
+    .hero-image-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: repeating-linear-gradient(45deg, var(--oak) 0px, var(--oak) 1px, transparent 1px, transparent 12px); }
+    .hero-image-badge { position: absolute; bottom: 2.5rem; left: 2.5rem; background: rgba(247,245,241,0.95); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; max-width: 220px; }
+    .hero-badge-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+    .hero-badge-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--oak); line-height: 1.3; }
+    .section-label { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
     .section-label-line { width: 2rem; height: 1px; background: var(--gold); }
-    .section-label-text {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ── Intro strip ───────────────────────────────── */
-    .intro-strip {
-      background: var(--oak);
-      color: #fff;
-      padding: 4rem 0;
-    }
-    .intro-strip-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
+    .section-label-text { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .intro-strip { background: var(--oak); color: #fff; padding: 4rem 0; }
+    .intro-strip-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .intro-strip h2 { color: #fff; }
     .intro-strip p  { color: rgba(255,255,255,0.75); margin-top: 1rem; line-height: 1.8; }
-    .intro-strip-features {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .intro-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .intro-feature-icon {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.85rem;
-      margin-top: 0.1rem;
-    }
+    .intro-strip-features { display: flex; flex-direction: column; gap: 1.25rem; }
+    .intro-feature { display: flex; align-items: flex-start; gap: 1rem; }
+    .intro-feature-icon { width: 2rem; height: 2rem; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; margin-top: 0.1rem; }
     .intro-feature-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
     .intro-feature-title { font-weight: 600; color: #fff; margin-bottom: 0.2rem; font-size: 0.95rem; }
-
-    /* ── News section ──────────────────────────────── */
-    .section-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      gap: 1rem;
-    }
-    .section-header-link {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 1px;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
+    .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; gap: 1rem; }
+    .section-header-link { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 1px; white-space: nowrap; transition: opacity 0.2s; }
     .section-header-link:hover { opacity: 0.7; }
-
-    /* ── Gallery section ───────────────────────────── */
     .gallery-section { background: var(--oak-light); }
-
-    /* ── Events section ────────────────────────────── */
-    .events-notices-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    /* ── Professional section ──────────────────────── */
+    .events-notices-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: start; }
     .professional-section { background: var(--gold-light); }
-    .professional-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
+    .professional-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .professional-left { position: sticky; top: 5rem; }
-
-    /* ── Contact section ───────────────────────────── */
     .contact-section { background: var(--ink); color: #fff; }
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .contact-section h2 { color: #fff; }
     .contact-section p  { color: rgba(255,255,255,0.65); }
     .contact-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
     .contact-detail { display: flex; flex-direction: column; gap: 0.2rem; }
-    .contact-detail-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .contact-detail-value {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.85);
-    }
+    .contact-detail-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .contact-detail-value { font-size: 1rem; color: rgba(255,255,255,0.85); }
     .contact-form { display: flex; flex-direction: column; gap: 0.75rem; }
-    .contact-input, .contact-textarea {
-      width: 100%;
-      padding: 0.75em 1em;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: var(--radius);
-      color: #fff;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      transition: border-color 0.2s;
-    }
+    .contact-input, .contact-textarea { width: 100%; padding: 0.75em 1em; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius); color: #fff; font-family: 'Jost', sans-serif; font-size: 16px; transition: border-color 0.2s; }
     .contact-input::placeholder, .contact-textarea::placeholder { color: rgba(255,255,255,0.3); }
     .contact-input:focus, .contact-textarea:focus { outline: none; border-color: var(--gold); }
     .contact-textarea { resize: vertical; min-height: 120px; }
-    .contact-submit {
-      padding: 0.85em 2em;
-      background: var(--gold);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      align-self: flex-start;
-    }
+    .contact-submit { padding: 0.85em 2em; background: var(--gold); color: #fff; border: none; border-radius: var(--radius); font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; align-self: flex-start; }
     .contact-submit:hover { opacity: 0.85; }
-
-    /* ── CQC badge ─────────────────────────────────── */
-    .cqc-strip {
-      background: var(--stone);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-    }
-    .cqc-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .cqc-badge {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .cqc-icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      background: var(--oak);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .cqc-strip { background: var(--stone); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+    .cqc-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .cqc-badge { display: flex; align-items: center; gap: 1rem; }
+    .cqc-icon { width: 3rem; height: 3rem; border-radius: 50%; background: var(--oak); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .cqc-icon svg { width: 1.4rem; height: 1.4rem; fill: #fff; }
-    .cqc-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--mist);
-      margin-bottom: 0.2rem;
-    }
-    .cqc-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--oak);
-    }
-    .cqc-text {
-      font-size: 0.82rem;
-      color: var(--mist);
-      max-width: 48ch;
-      line-height: 1.6;
-    }
-
-    /* ── Footer ────────────────────────────────────── */
-    .site-footer {
-      background: #111a12;
-      color: rgba(255,255,255,0.45);
-      padding: 2rem 0;
-      font-size: 0.78rem;
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.6);
-    }
+    .cqc-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.2rem; }
+    .cqc-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--oak); }
+    .cqc-text { font-size: 0.82rem; color: var(--mist); max-width: 48ch; line-height: 1.6; }
+    .site-footer { background: #111a12; color: rgba(255,255,255,0.45); padding: 2rem 0; font-size: 0.78rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.6); }
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a { transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.7); }
-
-    /* ── Page nav (single page with anchor sections) ── */
     .page-section { scroll-margin-top: 80px; }
-
-    /* ── Responsive ────────────────────────────────── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-image { min-height: 300px; }
@@ -529,7 +143,6 @@
 </head>
 <body>
 
-  <!-- ── Navigation ─────────────────────────────────── -->
   <header class="site-header" id="site-header">
     <div class="container">
       <nav class="nav-inner">
@@ -543,7 +156,7 @@
           <li><a href="#qa">For Professionals</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Arrange a Visit</a>
+        <a href="tel:01992551900" class="nav-cta">01992 551900</a>
         <button class="nav-mobile-btn" aria-label="Menu" onclick="toggleMobileNav()">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -555,7 +168,6 @@
     </div>
   </header>
 
-  <!-- ── Hero ───────────────────────────────────────── -->
   <main>
   <section class="hero page-section" id="home">
     <div class="hero-content container" style="grid-column:1;padding-right:3rem">
@@ -572,22 +184,10 @@
         <a href="#open-days" class="btn-secondary">Upcoming open days</a>
       </div>
       <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">29</div>
-          <div class="hero-stat-label">Private houses</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">23</div>
-          <div class="hero-stat-label">Nursing beds</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">10</div>
-          <div class="hero-stat-label">Available now</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">CQC</div>
-          <div class="hero-stat-label">Rated Good</div>
-        </div>
+        <div><div class="hero-stat-num">29</div><div class="hero-stat-label">Private houses</div></div>
+        <div><div class="hero-stat-num">23</div><div class="hero-stat-label">Nursing beds</div></div>
+        <div><div class="hero-stat-num">10</div><div class="hero-stat-label">Available now</div></div>
+        <div><div class="hero-stat-num">CQC</div><div class="hero-stat-label">Rated Good</div></div>
       </div>
     </div>
     <div class="hero-image">
@@ -600,7 +200,6 @@
     </div>
   </section>
 
-  <!-- ── CQC strip ───────────────────────────────────── -->
   <div class="cqc-strip">
     <div class="container">
       <div class="cqc-inner">
@@ -619,12 +218,11 @@
     </div>
   </div>
 
-  <!-- ── Intro ───────────────────────────────────────── -->
   <div class="intro-strip">
     <div class="container">
       <div class="intro-strip-inner">
         <div>
-          <div class="section-label" style="--gold:#f0c97a">
+          <div class="section-label">
             <div class="section-label-line" style="background:#f0c97a"></div>
             <span class="section-label-text" style="color:#f0c97a">About us</span>
           </div>
@@ -632,48 +230,20 @@
           <cmm-text data-slot="home-intro" fallback="Broad Oak Manor is a community — 29 private houses and a 23-bed nursing home set within landscaped grounds in Hertford."></cmm-text>
         </div>
         <div class="intro-strip-features">
-          <div class="intro-feature">
-            <div class="intro-feature-icon">⌂</div>
-            <div class="intro-feature-text">
-              <div class="intro-feature-title">Private ownership</div>
-              Your home is yours. Fully private, with a service that wraps around you.
-            </div>
-          </div>
-          <div class="intro-feature">
-            <div class="intro-feature-icon">◎</div>
-            <div class="intro-feature-text">
-              <div class="intro-feature-title">24-hour care team</div>
-              On-site professionals available around the clock — without the institution.
-            </div>
-          </div>
-          <div class="intro-feature">
-            <div class="intro-feature-icon">↕</div>
-            <div class="intro-feature-text">
-              <div class="intro-feature-title">Care that grows with you</div>
-              Move between assisted living and nursing care as your needs evolve — without leaving your community.
-            </div>
-          </div>
-          <div class="intro-feature">
-            <div class="intro-feature-icon">✦</div>
-            <div class="intro-feature-text">
-              <div class="intro-feature-title">Hertford, Hertfordshire</div>
-              35 minutes from London Liverpool Street. A market town with everything you need close by.
-            </div>
-          </div>
+          <div class="intro-feature"><div class="intro-feature-icon">⌂</div><div class="intro-feature-text"><div class="intro-feature-title">Private ownership</div>Your home is yours. Fully private, with a service that wraps around you.</div></div>
+          <div class="intro-feature"><div class="intro-feature-icon">◎</div><div class="intro-feature-text"><div class="intro-feature-title">24-hour care team</div>On-site professionals available around the clock — without the institution.</div></div>
+          <div class="intro-feature"><div class="intro-feature-icon">↕</div><div class="intro-feature-text"><div class="intro-feature-title">Care that grows with you</div>Move between assisted living and nursing care as your needs evolve — without leaving your community.</div></div>
+          <div class="intro-feature"><div class="intro-feature-icon">✦</div><div class="intro-feature-text"><div class="intro-feature-title">Hertford, Hertfordshire</div>35 minutes from London Liverpool Street. A market town with everything you need close by.</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ── Community Life / News ──────────────────────── -->
   <section class="section page-section" id="community">
     <div class="container">
       <div class="section-header">
         <div>
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">Community life</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Community life</span></div>
           <h2>Life at Broad Oak Manor</h2>
         </div>
         <a href="#community" class="section-header-link">All stories →</a>
@@ -682,15 +252,11 @@
     </div>
   </section>
 
-  <!-- ── Gallery ────────────────────────────────────── -->
   <section class="section gallery-section page-section" id="gallery">
     <div class="container">
       <div class="section-header">
         <div>
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">The estate</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">The estate</span></div>
           <h2>The homes and grounds</h2>
         </div>
       </div>
@@ -698,41 +264,28 @@
     </div>
   </section>
 
-  <!-- ── Open Days & Notices ────────────────────────── -->
   <section class="section page-section" id="open-days">
     <div class="container">
       <div class="events-notices-grid">
         <div>
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">Open days &amp; events</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Open days &amp; events</span></div>
           <h2 style="margin-bottom:1.5rem">Come and see for yourself</h2>
-          <p style="color:var(--mist);margin-bottom:2rem;max-width:48ch">
-            The best way to understand Broad Oak Manor is to visit. Our open days are informal — come and go as you please, speak with residents and the care team, and see the homes.
-          </p>
+          <p style="color:var(--mist);margin-bottom:2rem;max-width:48ch">The best way to understand Broad Oak Manor is to visit. Our open days are informal — come and go as you please, speak with residents and the care team, and see the homes.</p>
           <cmm-events limit="6"></cmm-events>
         </div>
         <div>
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">Notices</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Notices</span></div>
           <cmm-notices limit="4"></cmm-notices>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Video ──────────────────────────────────────── -->
   <section class="section page-section" style="background:var(--oak-light)" id="video">
     <div class="container">
       <div class="section-header">
         <div>
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">Video</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Video</span></div>
           <h2>See Broad Oak Manor</h2>
         </div>
       </div>
@@ -740,28 +293,17 @@
     </div>
   </section>
 
-  <!-- ── Professional Q&A ───────────────────────────── -->
   <section class="section professional-section page-section" id="qa">
     <div class="container">
       <div class="professional-inner">
         <div class="professional-left">
-          <div class="section-label">
-            <div class="section-label-line"></div>
-            <span class="section-label-text">For professionals &amp; families</span>
-          </div>
+          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">For professionals &amp; families</span></div>
           <h2>Questions answered</h2>
           <cmm-text data-slot="professional-intro" fallback="We work with GPs, social workers, hospital discharge teams, and financial advisers across Hertfordshire."></cmm-text>
           <div style="margin-top:2.5rem">
             <h3 style="font-size:1.1rem;margin-bottom:0.75rem">Download our referral guide</h3>
-            <p style="font-size:0.88rem;color:var(--mist);margin-bottom:1.25rem;line-height:1.7">
-              A full professional information pack — care levels, costs, process, CQC detail — for GPs, social workers, and discharge planners.
-            </p>
-            <cmm-capture
-              offer="professional-pack"
-              fields="name,organisation,email"
-              cta="Send me the guide"
-              title="">
-            </cmm-capture>
+            <p style="font-size:0.88rem;color:var(--mist);margin-bottom:1.25rem;line-height:1.7">A full professional information pack — care levels, costs, process, CQC detail — for GPs, social workers, and discharge planners.</p>
+            <cmm-capture offer="professional-pack" fields="name,organisation,email" cta="Send me the guide" title=""></cmm-capture>
           </div>
         </div>
         <div>
@@ -771,7 +313,6 @@
     </div>
   </section>
 
-  <!-- ── Contact ────────────────────────────────────── -->
   <section class="section contact-section page-section" id="contact">
     <div class="container">
       <div class="contact-inner">
@@ -781,26 +322,12 @@
             <span class="section-label-text" style="color:var(--gold)">Get in touch</span>
           </div>
           <h2>Arrange a visit</h2>
-          <p style="margin-top:1rem;line-height:1.8">
-            We are always happy to show you around — with or without an appointment. Call us, email, or use the form and we will be in touch the same day.
-          </p>
+          <p style="margin-top:1rem;line-height:1.8">We are always happy to show you around — with or without an appointment. Call us, email, or use the form and we will be in touch the same day.</p>
           <div class="contact-details">
-            <div class="contact-detail">
-              <span class="contact-detail-label">Address</span>
-              <span class="contact-detail-value">Broad Oak Manor, Hertford, SG14 2JA</span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Telephone</span>
-              <span class="contact-detail-value"><a href="tel:+441992000000" style="color:rgba(255,255,255,0.85)">01992 000 000</a></span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Email</span>
-              <span class="contact-detail-value"><a href="mailto:hello@broadoakmanor.co.uk" style="color:rgba(255,255,255,0.85)">hello@broadoakmanor.co.uk</a></span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail-label">Estate agent</span>
-              <span class="contact-detail-value">Nigel Adams, Big Black Hen</span>
-            </div>
+            <div class="contact-detail"><span class="contact-detail-label">Address</span><span class="contact-detail-value">Broad Oak Manor, Hertford, SG14 2JA</span></div>
+            <div class="contact-detail"><span class="contact-detail-label">Telephone</span><span class="contact-detail-value"><a href="tel:01992551900" style="color:rgba(255,255,255,0.85)">01992 551900</a></span></div>
+            <div class="contact-detail"><span class="contact-detail-label">Email</span><span class="contact-detail-value"><a href="mailto:info@broadoakmanor.co.uk" style="color:rgba(255,255,255,0.85)">info@broadoakmanor.co.uk</a></span></div>
+            <div class="contact-detail"><span class="contact-detail-label">Estate agent</span><span class="contact-detail-value">Nigel Adams · Big Black Hen</span></div>
           </div>
         </div>
         <div>
@@ -810,9 +337,7 @@
             <input class="contact-input" type="tel" placeholder="Phone number (optional)">
             <textarea class="contact-textarea" placeholder="Tell us a little about what you are looking for (optional)"></textarea>
             <button type="submit" class="contact-submit">Send enquiry →</button>
-            <p id="contact-confirm" style="display:none;color:var(--gold);font-size:0.88rem;margin-top:0.5rem">
-              Thank you — we will be in touch shortly.
-            </p>
+            <p id="contact-confirm" style="display:none;color:var(--gold);font-size:0.88rem;margin-top:0.5rem">Thank you — we will be in touch shortly.</p>
           </form>
         </div>
       </div>
@@ -820,7 +345,6 @@
   </section>
   </main>
 
-  <!-- ── Footer ─────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -835,7 +359,6 @@
     </div>
   </footer>
 
-  <!-- ── CMM Widgets ─────────────────────────────────── -->
   <script
     src="cmm-widgets.js"
     data-url="https://wzxrvkmtuesxconpezta.supabase.co"
@@ -844,21 +367,14 @@
   ></script>
 
   <script>
-    // ── Scroll header shadow ──────────────────────────
     window.addEventListener('scroll', () => {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 20);
     });
-
-    // ── Mobile nav ────────────────────────────────────
     function toggleMobileNav() {
       const links = document.querySelector('.nav-links');
       const open  = links.style.display === 'flex';
-      links.style.cssText = open
-        ? ''
-        : 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(247,245,241,0.98);backdrop-filter:blur(8px);padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid rgba(44,74,46,0.12);z-index:99';
+      links.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(247,245,241,0.98);backdrop-filter:blur(8px);padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid rgba(44,74,46,0.12);z-index:99';
     }
-
-    // ── Contact form (placeholder — wire to backend later) ─
     function handleContactForm(e) {
       e.preventDefault();
       document.getElementById('contact-confirm').style.display = 'block';
