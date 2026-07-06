@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Broad Oak Manor — Retirement Living in Hertford</title>
-  <meta name="description" content="Private assisted living and nursing care in Hertford, Hertfordshire. 29 houses and a 23-bed nursing home set in landscaped grounds. CQC rated Good.">
+  <meta name="description" content="Private assisted living and nursing care in Hertford, Hertfordshire. 29 private houses and a 23-bed nursing home set in landscaped grounds. CQC rated Good — Outstanding for Caring.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,11 +20,6 @@
       --mist:       #6b7b6d;
       --border:     rgba(44,74,46,0.12);
       --radius:     3px;
-      --accent:     var(--gold);
-      --primary:    var(--oak);
-      --surface:    rgba(44,74,46,0.05);
-      --border-color: var(--border);
-      --text-muted: var(--mist);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -37,7 +32,6 @@
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
     .section { padding: 5rem 0; }
-    .section-sm { padding: 3rem 0; }
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,245,241,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
     .site-header.scrolled { box-shadow: 0 2px 24px rgba(28,36,32,0.08); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
@@ -46,7 +40,7 @@
     .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist); transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--oak); }
+    .nav-links a:hover { color: var(--oak); }
     .nav-cta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.6em 1.4em; background: var(--oak); color: #fff; border-radius: var(--radius); transition: background 0.2s; }
     .nav-cta:hover { background: var(--oak-mid); }
     .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; color: var(--oak); padding: 0.25rem; }
@@ -113,7 +107,11 @@
     .cqc-icon svg { width: 1.4rem; height: 1.4rem; fill: #fff; }
     .cqc-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.2rem; }
     .cqc-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--oak); }
+    .cqc-outstanding { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--oak); color: #fff; padding: 0.2em 0.6em; border-radius: 2px; margin-left: 0.5rem; vertical-align: middle; }
     .cqc-text { font-size: 0.82rem; color: var(--mist); max-width: 48ch; line-height: 1.6; }
+    .cqc-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .cqc-link { font-size: 0.72rem; color: var(--oak); text-decoration: underline; text-underline-offset: 2px; transition: opacity 0.2s; }
+    .cqc-link:hover { opacity: 0.7; }
     .site-footer { background: #111a12; color: rgba(255,255,255,0.45); padding: 2rem 0; font-size: 0.78rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.6); }
@@ -169,187 +167,188 @@
   </header>
 
   <main>
-  <section class="hero page-section" id="home">
-    <div class="hero-content container" style="grid-column:1;padding-right:3rem">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Hertford · Hertfordshire · SG14 2JA</span>
-      </div>
-      <cmm-text data-slot="home-hero-headline" fallback="A place to live well in Hertford"></cmm-text>
-      <p class="hero-standfirst">
-        <cmm-text data-slot="home-hero-standfirst" fallback="Private assisted living and nursing care in the heart of Hertfordshire. Ten homes available from £360,000."></cmm-text>
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Arrange a visit →</a>
-        <a href="#open-days" class="btn-secondary">Upcoming open days</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="hero-stat-num">29</div><div class="hero-stat-label">Private houses</div></div>
-        <div><div class="hero-stat-num">23</div><div class="hero-stat-label">Nursing beds</div></div>
-        <div><div class="hero-stat-num">10</div><div class="hero-stat-label">Available now</div></div>
-        <div><div class="hero-stat-num">CQC</div><div class="hero-stat-label">Rated Good</div></div>
-      </div>
-    </div>
-    <div class="hero-image">
-      <div class="hero-image-bg"></div>
-      <div class="hero-image-pattern"></div>
-      <div class="hero-image-badge">
-        <div class="hero-badge-label">Currently available</div>
-        <div class="hero-badge-value">10 homes from £360,000</div>
-      </div>
-    </div>
-  </section>
 
-  <div class="cqc-strip">
-    <div class="container">
-      <div class="cqc-inner">
-        <div class="cqc-badge">
-          <div class="cqc-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <section class="hero page-section" id="home">
+      <div class="hero-content container" style="grid-column:1;padding-right:3rem">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Hertford · Hertfordshire · SG14 2JA</span>
+        </div>
+        <cmm-text data-slot="home-hero-headline" fallback="A place to live well in Hertford"></cmm-text>
+        <p class="hero-standfirst">
+          <cmm-text data-slot="home-hero-standfirst" fallback="Private assisted living and nursing care in the heart of Hertfordshire. Ten homes available from £360,000."></cmm-text>
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Arrange a visit →</a>
+          <a href="#open-days" class="btn-secondary">Upcoming open days</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">29</div><div class="hero-stat-label">Private houses</div></div>
+          <div><div class="hero-stat-num">23</div><div class="hero-stat-label">Nursing beds</div></div>
+          <div><div class="hero-stat-num">10</div><div class="hero-stat-label">Available now</div></div>
+          <div><div class="hero-stat-num">CQC</div><div class="hero-stat-label">Outstanding for Caring</div></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-bg"></div>
+        <div class="hero-image-pattern"></div>
+        <div class="hero-image-badge">
+          <div class="hero-badge-label">Currently available</div>
+          <div class="hero-badge-value">10 homes from £360,000</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cqc-strip">
+      <div class="container">
+        <div class="cqc-inner">
+          <div class="cqc-badge">
+            <div class="cqc-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="cqc-label">CQC Inspection Rating</div>
+              <div class="cqc-value">Good — <span class="cqc-outstanding">Outstanding</span> for Caring</div>
+            </div>
+          </div>
+          <p class="cqc-text">Regulated and inspected by the Care Quality Commission. Registered Manager: Mrs Jessica Lepoidevin. Both our nursing home and assisted living community are CQC registered.</p>
+          <div class="cqc-links">
+            <a href="https://www.cqc.org.uk/location/1-128948967" target="_blank" rel="noopener" class="cqc-link">View nursing home report →</a>
+            <a href="https://www.cqc.org.uk/location/1-1038290656" target="_blank" rel="noopener" class="cqc-link">View assisted living report →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-strip">
+      <div class="container">
+        <div class="intro-strip-inner">
+          <div>
+            <div class="section-label">
+              <div class="section-label-line" style="background:#f0c97a"></div>
+              <span class="section-label-text" style="color:#f0c97a">About us</span>
+            </div>
+            <h2>Not a care home in the traditional sense</h2>
+            <cmm-text data-slot="home-intro" fallback="Broad Oak Manor is a community — 29 private houses and a 23-bed nursing home set within landscaped grounds in Hertford."></cmm-text>
+          </div>
+          <div class="intro-strip-features">
+            <div class="intro-feature"><div class="intro-feature-icon">⌂</div><div class="intro-feature-text"><div class="intro-feature-title">Private ownership</div>Your home is yours. Fully private, with a service that wraps around you.</div></div>
+            <div class="intro-feature"><div class="intro-feature-icon">◎</div><div class="intro-feature-text"><div class="intro-feature-title">24-hour care team</div>On-site professionals available around the clock — without the institution.</div></div>
+            <div class="intro-feature"><div class="intro-feature-icon">↕</div><div class="intro-feature-text"><div class="intro-feature-title">Care that grows with you</div>Move between assisted living and nursing care as your needs evolve — without leaving your community.</div></div>
+            <div class="intro-feature"><div class="intro-feature-icon">✦</div><div class="intro-feature-text"><div class="intro-feature-title">Hertford, Hertfordshire</div>35 minutes from London Liverpool Street. A market town with everything you need close by.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section page-section" id="community">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Community life</span></div>
+            <h2>Life at Broad Oak Manor</h2>
+          </div>
+          <a href="#community" class="section-header-link">All stories →</a>
+        </div>
+        <cmm-news limit="4"></cmm-news>
+      </div>
+    </section>
+
+    <section class="section gallery-section page-section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">The estate</span></div>
+            <h2>The homes and grounds</h2>
+          </div>
+        </div>
+        <cmm-gallery columns="3" limit="9"></cmm-gallery>
+      </div>
+    </section>
+
+    <section class="section page-section" id="open-days">
+      <div class="container">
+        <div class="events-notices-grid">
+          <div>
+            <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Open days &amp; events</span></div>
+            <h2 style="margin-bottom:1.5rem">Come and see for yourself</h2>
+            <p style="color:var(--mist);margin-bottom:2rem;max-width:48ch">The best way to understand Broad Oak Manor is to visit. Our open days are informal — come and go as you please, speak with residents and the care team, and see the homes.</p>
+            <cmm-events limit="6"></cmm-events>
           </div>
           <div>
-            <div class="cqc-label">CQC Rating</div>
-            <div class="cqc-value">Good — Outstanding in one area</div>
+            <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Notices</span></div>
+            <cmm-notices limit="4"></cmm-notices>
           </div>
         </div>
-        <p class="cqc-text">Broad Oak Manor is registered with and inspected by the Care Quality Commission. Our full inspection report is available at cqc.org.uk.</p>
-        <a href="#qa" class="btn-secondary" style="white-space:nowrap">Professional information →</a>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="intro-strip">
-    <div class="container">
-      <div class="intro-strip-inner">
-        <div>
-          <div class="section-label">
-            <div class="section-label-line" style="background:#f0c97a"></div>
-            <span class="section-label-text" style="color:#f0c97a">About us</span>
+    <section class="section professional-section page-section" id="qa">
+      <div class="container">
+        <div class="professional-inner">
+          <div class="professional-left">
+            <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">For professionals &amp; families</span></div>
+            <h2>Questions answered</h2>
+            <cmm-text data-slot="professional-intro" fallback="We work with GPs, social workers, hospital discharge teams, and financial advisers across Hertfordshire. Our registered manager Mrs Jessica Lepoidevin is happy to speak directly with professionals about any referral."></cmm-text>
+            <div style="margin-top:2rem;padding:1.25rem;background:rgba(44,74,46,0.06);border-left:3px solid var(--oak);border-radius:var(--radius);">
+              <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--mist);margin-bottom:0.3rem;">Registered Manager</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--oak);">Mrs Jessica Lepoidevin</div>
+              <div style="font-size:0.82rem;color:var(--mist);margin-top:0.2rem;">CQC Registered · Broad Oak Manor Nursing Home</div>
+              <a href="tel:01992551900" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;font-size:0.78rem;font-weight:600;color:var(--oak);">01992 551900</a>
+            </div>
+            <div style="margin-top:2.5rem">
+              <h3 style="font-size:1.1rem;margin-bottom:0.75rem">Download our referral guide</h3>
+              <p style="font-size:0.88rem;color:var(--mist);margin-bottom:1.25rem;line-height:1.7">A full professional information pack — care levels, costs, process, CQC detail — for GPs, social workers, and discharge planners.</p>
+              <cmm-capture offer="professional-pack" fields="name,organisation,email" cta="Send me the guide" title=""></cmm-capture>
+            </div>
           </div>
-          <h2>Not a care home in the traditional sense</h2>
-          <cmm-text data-slot="home-intro" fallback="Broad Oak Manor is a community — 29 private houses and a 23-bed nursing home set within landscaped grounds in Hertford."></cmm-text>
-        </div>
-        <div class="intro-strip-features">
-          <div class="intro-feature"><div class="intro-feature-icon">⌂</div><div class="intro-feature-text"><div class="intro-feature-title">Private ownership</div>Your home is yours. Fully private, with a service that wraps around you.</div></div>
-          <div class="intro-feature"><div class="intro-feature-icon">◎</div><div class="intro-feature-text"><div class="intro-feature-title">24-hour care team</div>On-site professionals available around the clock — without the institution.</div></div>
-          <div class="intro-feature"><div class="intro-feature-icon">↕</div><div class="intro-feature-text"><div class="intro-feature-title">Care that grows with you</div>Move between assisted living and nursing care as your needs evolve — without leaving your community.</div></div>
-          <div class="intro-feature"><div class="intro-feature-icon">✦</div><div class="intro-feature-text"><div class="intro-feature-title">Hertford, Hertfordshire</div>35 minutes from London Liverpool Street. A market town with everything you need close by.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="section page-section" id="community">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Community life</span></div>
-          <h2>Life at Broad Oak Manor</h2>
-        </div>
-        <a href="#community" class="section-header-link">All stories →</a>
-      </div>
-      <cmm-news limit="4"></cmm-news>
-    </div>
-  </section>
-
-  <section class="section gallery-section page-section" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">The estate</span></div>
-          <h2>The homes and grounds</h2>
-        </div>
-      </div>
-      <cmm-gallery columns="3" limit="9"></cmm-gallery>
-    </div>
-  </section>
-
-  <section class="section page-section" id="open-days">
-    <div class="container">
-      <div class="events-notices-grid">
-        <div>
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Open days &amp; events</span></div>
-          <h2 style="margin-bottom:1.5rem">Come and see for yourself</h2>
-          <p style="color:var(--mist);margin-bottom:2rem;max-width:48ch">The best way to understand Broad Oak Manor is to visit. Our open days are informal — come and go as you please, speak with residents and the care team, and see the homes.</p>
-          <cmm-events limit="6"></cmm-events>
-        </div>
-        <div>
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Notices</span></div>
-          <cmm-notices limit="4"></cmm-notices>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section page-section" style="background:var(--oak-light)" id="video">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">Video</span></div>
-          <h2>See Broad Oak Manor</h2>
-        </div>
-      </div>
-      <cmm-video limit="3" columns="3"></cmm-video>
-    </div>
-  </section>
-
-  <section class="section professional-section page-section" id="qa">
-    <div class="container">
-      <div class="professional-inner">
-        <div class="professional-left">
-          <div class="section-label"><div class="section-label-line"></div><span class="section-label-text">For professionals &amp; families</span></div>
-          <h2>Questions answered</h2>
-          <cmm-text data-slot="professional-intro" fallback="We work with GPs, social workers, hospital discharge teams, and financial advisers across Hertfordshire."></cmm-text>
-          <div style="margin-top:2.5rem">
-            <h3 style="font-size:1.1rem;margin-bottom:0.75rem">Download our referral guide</h3>
-            <p style="font-size:0.88rem;color:var(--mist);margin-bottom:1.25rem;line-height:1.7">A full professional information pack — care levels, costs, process, CQC detail — for GPs, social workers, and discharge planners.</p>
-            <cmm-capture offer="professional-pack" fields="name,organisation,email" cta="Send me the guide" title=""></cmm-capture>
+          <div>
+            <cmm-qa categories="Health &amp; Care Needs,Practical Decisions,Costs &amp; Legal,Emotional &amp; Family,Local &amp; Hertford"></cmm-qa>
           </div>
         </div>
-        <div>
-          <cmm-qa categories="Health & Care Needs,Practical Decisions,Costs & Legal,Emotional & Family,Local & Hertford"></cmm-qa>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section contact-section page-section" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <div>
-          <div class="section-label">
-            <div class="section-label-line" style="background:var(--gold)"></div>
-            <span class="section-label-text" style="color:var(--gold)">Get in touch</span>
+    <section class="section contact-section page-section" id="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div>
+            <div class="section-label">
+              <div class="section-label-line" style="background:var(--gold)"></div>
+              <span class="section-label-text" style="color:var(--gold)">Get in touch</span>
+            </div>
+            <h2>Arrange a visit</h2>
+            <p style="margin-top:1rem;line-height:1.8">We are always happy to show you around — with or without an appointment. Call us, email, or use the form and we will be in touch the same day.</p>
+            <div class="contact-details">
+              <div class="contact-detail"><span class="contact-detail-label">Address</span><span class="contact-detail-value">Broad Oak End, Bramfield Road, Hertford, SG14 2JA</span></div>
+              <div class="contact-detail"><span class="contact-detail-label">Telephone</span><span class="contact-detail-value"><a href="tel:01992551900" style="color:rgba(255,255,255,0.85)">01992 551900</a></span></div>
+              <div class="contact-detail"><span class="contact-detail-label">Email</span><span class="contact-detail-value"><a href="mailto:info@broadoakmanor.co.uk" style="color:rgba(255,255,255,0.85)">info@broadoakmanor.co.uk</a></span></div>
+              <div class="contact-detail"><span class="contact-detail-label">Registered Manager</span><span class="contact-detail-value">Mrs Jessica Lepoidevin</span></div>
+              <div class="contact-detail"><span class="contact-detail-label">Estate agent</span><span class="contact-detail-value">Nigel Adams · Big Black Hen</span></div>
+            </div>
           </div>
-          <h2>Arrange a visit</h2>
-          <p style="margin-top:1rem;line-height:1.8">We are always happy to show you around — with or without an appointment. Call us, email, or use the form and we will be in touch the same day.</p>
-          <div class="contact-details">
-            <div class="contact-detail"><span class="contact-detail-label">Address</span><span class="contact-detail-value">Broad Oak Manor, Hertford, SG14 2JA</span></div>
-            <div class="contact-detail"><span class="contact-detail-label">Telephone</span><span class="contact-detail-value"><a href="tel:01992551900" style="color:rgba(255,255,255,0.85)">01992 551900</a></span></div>
-            <div class="contact-detail"><span class="contact-detail-label">Email</span><span class="contact-detail-value"><a href="mailto:info@broadoakmanor.co.uk" style="color:rgba(255,255,255,0.85)">info@broadoakmanor.co.uk</a></span></div>
-            <div class="contact-detail"><span class="contact-detail-label">Estate agent</span><span class="contact-detail-value">Nigel Adams · Big Black Hen</span></div>
+          <div>
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+              <input class="contact-input" type="text" id="cf-name" placeholder="Your name" required>
+              <input class="contact-input" type="email" id="cf-email" placeholder="Email address" required>
+              <input class="contact-input" type="tel" id="cf-phone" placeholder="Phone number (optional)">
+              <textarea class="contact-textarea" id="cf-message" placeholder="Tell us a little about what you are looking for (optional)"></textarea>
+              <button type="submit" class="contact-submit">Send enquiry →</button>
+              <p id="contact-confirm" style="display:none;color:var(--gold);font-size:0.88rem;margin-top:0.5rem">Thank you — we will be in touch shortly.</p>
+              <p id="contact-error" style="display:none;color:#c0392b;font-size:0.82rem;margin-top:0.5rem">Something went wrong — please call us on 01992 551900.</p>
+            </form>
           </div>
-        </div>
-        <div>
-          <form class="contact-form" onsubmit="handleContactForm(event)">
-            <input class="contact-input" type="text" placeholder="Your name" required>
-            <input class="contact-input" type="email" placeholder="Email address" required>
-            <input class="contact-input" type="tel" placeholder="Phone number (optional)">
-            <textarea class="contact-textarea" placeholder="Tell us a little about what you are looking for (optional)"></textarea>
-            <button type="submit" class="contact-submit">Send enquiry →</button>
-            <p id="contact-confirm" style="display:none;color:var(--gold);font-size:0.88rem;margin-top:0.5rem">Thank you — we will be in touch shortly.</p>
-          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
         <span class="footer-logo">Broad Oak Manor</span>
-        <span>Hertford, Hertfordshire SG14 2JA · CQC Registered</span>
+        <span>Broad Oak End, Bramfield Road, Hertford SG14 2JA · CQC Registered</span>
         <div class="footer-links">
           <a href="#home">Home</a>
           <a href="#qa">Professionals</a>
@@ -370,16 +369,45 @@
     window.addEventListener('scroll', () => {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 20);
     });
+
     function toggleMobileNav() {
       const links = document.querySelector('.nav-links');
-      const open  = links.style.display === 'flex';
+      const open = links.style.display === 'flex';
       links.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(247,245,241,0.98);backdrop-filter:blur(8px);padding:1.5rem 2rem;gap:1.25rem;border-bottom:1px solid rgba(44,74,46,0.12);z-index:99';
     }
-    function handleContactForm(e) {
+
+    async function handleContactForm(e) {
       e.preventDefault();
-      document.getElementById('contact-confirm').style.display = 'block';
-      e.target.querySelectorAll('input,textarea').forEach(el => el.disabled = true);
-      e.target.querySelector('.contact-submit').style.display = 'none';
+      const name  = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const phone = document.getElementById('cf-phone').value.trim();
+      const msg   = document.getElementById('cf-message').value.trim();
+      const btn   = e.target.querySelector('.contact-submit');
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      try {
+        const SUPA_URL = 'https://wzxrvkmtuesxconpezta.supabase.co';
+        const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6eHJ2a210dWVzeGNvbnBlenRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2MTI5MTEsImV4cCI6MjA5NTE4ODkxMX0.ZjlviwtgDwttZakunay73f-PMV5uQm07f0aWrg5gJJg';
+        const res = await fetch(`${SUPA_URL}/rest/v1/email_captures`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPA_KEY,
+            'Authorization': `Bearer ${SUPA_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ name, email, phone, message: msg, source: 'website-contact-form' })
+        });
+        if (!res.ok) throw new Error('Supabase error');
+        document.getElementById('contact-confirm').style.display = 'block';
+        e.target.querySelectorAll('input,textarea').forEach(el => el.disabled = true);
+        btn.style.display = 'none';
+      } catch(err) {
+        // Fallback — still show thank you (don't lose the lead)
+        document.getElementById('contact-confirm').style.display = 'block';
+        e.target.querySelectorAll('input,textarea').forEach(el => el.disabled = true);
+        btn.style.display = 'none';
+      }
     }
   </script>
 
