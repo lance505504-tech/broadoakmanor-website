@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Broad Oak Manor — Retirement Living in Hertford</title>
-  <meta name="description" content="Private assisted living and nursing care in Hertford, Hertfordshire. 29 private houses and a 23-bed nursing home set in landscaped grounds. CQC rated Good — Outstanding for Caring.">
+  <meta name="description" content="Private assisted living and nursing care in Hertford, Hertfordshire. CQC rated Outstanding for our assisted living service, and Good with Outstanding for Caring in our nursing home.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -100,18 +100,22 @@
     .contact-textarea { resize: vertical; min-height: 120px; }
     .contact-submit { padding: 0.85em 2em; background: var(--gold); color: #fff; border: none; border-radius: var(--radius); font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; align-self: flex-start; }
     .contact-submit:hover { opacity: 0.85; }
-    .cqc-strip { background: var(--stone); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
-    .cqc-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .cqc-badge { display: flex; align-items: center; gap: 1rem; }
-    .cqc-icon { width: 3rem; height: 3rem; border-radius: 50%; background: var(--oak); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .cqc-icon svg { width: 1.4rem; height: 1.4rem; fill: #fff; }
-    .cqc-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.2rem; }
-    .cqc-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--oak); }
-    .cqc-outstanding { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--oak); color: #fff; padding: 0.2em 0.6em; border-radius: 2px; margin-left: 0.5rem; vertical-align: middle; }
-    .cqc-text { font-size: 0.82rem; color: var(--mist); max-width: 48ch; line-height: 1.6; }
-    .cqc-links { display: flex; flex-direction: column; gap: 0.4rem; }
-    .cqc-link { font-size: 0.72rem; color: var(--oak); text-decoration: underline; text-underline-offset: 2px; transition: opacity 0.2s; }
+    .cqc-strip { background: var(--stone); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2rem 0; }
+    .cqc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .cqc-service { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+    .cqc-icon { width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--oak); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+    .cqc-icon svg { width: 1.2rem; height: 1.2rem; fill: #fff; }
+    .cqc-icon.outstanding { background: var(--gold); }
+    .cqc-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.3rem; }
+    .cqc-service-name { font-size: 0.78rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+    .cqc-rating { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--oak); line-height: 1.2; }
+    .cqc-badge { display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15em 0.55em; border-radius: 2px; margin-left: 0.35rem; vertical-align: middle; }
+    .cqc-badge.outstanding { background: var(--gold); color: #fff; }
+    .cqc-badge.good { background: var(--oak-light); color: var(--oak); }
+    .cqc-sub { font-size: 0.72rem; color: var(--mist); margin-top: 0.3rem; }
+    .cqc-link { font-size: 0.7rem; color: var(--oak); text-decoration: underline; text-underline-offset: 2px; display: inline-block; margin-top: 0.5rem; transition: opacity 0.2s; }
     .cqc-link:hover { opacity: 0.7; }
+    .cqc-manager { padding: 0.75rem 1rem; background: var(--oak-light); border-radius: var(--radius); margin-top: 0.75rem; font-size: 0.78rem; color: var(--oak); grid-column: 1 / -1; }
     .site-footer { background: #111a12; color: rgba(255,255,255,0.45); padding: 2rem 0; font-size: 0.78rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.6); }
@@ -128,6 +132,7 @@
       .professional-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .professional-left { position: static; }
       .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cqc-inner { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: flex; }
     }
@@ -135,7 +140,6 @@
       .container { padding: 0 1.25rem; }
       .section { padding: 3.5rem 0; }
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-      .cqc-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -186,7 +190,7 @@
           <div><div class="hero-stat-num">29</div><div class="hero-stat-label">Private houses</div></div>
           <div><div class="hero-stat-num">23</div><div class="hero-stat-label">Nursing beds</div></div>
           <div><div class="hero-stat-num">10</div><div class="hero-stat-label">Available now</div></div>
-          <div><div class="hero-stat-num">CQC</div><div class="hero-stat-label">Outstanding for Caring</div></div>
+          <div><div class="hero-stat-num">CQC</div><div class="hero-stat-label">Outstanding rated</div></div>
         </div>
       </div>
       <div class="hero-image">
@@ -199,23 +203,41 @@
       </div>
     </section>
 
+    <!-- CQC STRIP — two registrations displayed correctly -->
     <div class="cqc-strip">
       <div class="container">
         <div class="cqc-inner">
-          <div class="cqc-badge">
+
+          <div class="cqc-service">
+            <div class="cqc-icon outstanding">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="cqc-label">CQC Rating</div>
+              <div class="cqc-service-name">Assisted Living (Domiciliary Care)</div>
+              <div class="cqc-rating">Outstanding <span class="cqc-badge outstanding">Overall</span></div>
+              <div class="cqc-sub">CQC registration 1-1038290656</div>
+              <a href="https://www.cqc.org.uk/location/1-1038290656" target="_blank" rel="noopener" class="cqc-link">View full report →</a>
+            </div>
+          </div>
+
+          <div class="cqc-service">
             <div class="cqc-icon">
               <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div>
-              <div class="cqc-label">CQC Inspection Rating</div>
-              <div class="cqc-value">Good — <span class="cqc-outstanding">Outstanding</span> for Caring</div>
+              <div class="cqc-label">CQC Rating</div>
+              <div class="cqc-service-name">Nursing Home</div>
+              <div class="cqc-rating">Good <span class="cqc-badge good">Overall</span> · <span class="cqc-badge outstanding">Outstanding</span> for Caring</div>
+              <div class="cqc-sub">CQC registration 1-128948967</div>
+              <a href="https://www.cqc.org.uk/location/1-128948967" target="_blank" rel="noopener" class="cqc-link">View full report →</a>
             </div>
           </div>
-          <p class="cqc-text">Regulated and inspected by the Care Quality Commission. Registered Manager: Mrs Jessica Lepoidevin. Both our nursing home and assisted living community are CQC registered.</p>
-          <div class="cqc-links">
-            <a href="https://www.cqc.org.uk/location/1-128948967" target="_blank" rel="noopener" class="cqc-link">View nursing home report →</a>
-            <a href="https://www.cqc.org.uk/location/1-1038290656" target="_blank" rel="noopener" class="cqc-link">View assisted living report →</a>
+
+          <div class="cqc-manager">
+            Registered Manager: <strong>Mrs Jessica Lepoidevin</strong> · Both services regulated and inspected by the Care Quality Commission · <a href="https://www.cqc.org.uk" target="_blank" rel="noopener" style="color:var(--oak);text-decoration:underline;text-underline-offset:2px;">cqc.org.uk</a>
           </div>
+
         </div>
       </div>
     </div>
@@ -384,26 +406,19 @@
       const msg   = document.getElementById('cf-message').value.trim();
       const btn   = e.target.querySelector('.contact-submit');
       btn.disabled = true; btn.textContent = 'Sending…';
-
       try {
         const SUPA_URL = 'https://wzxrvkmtuesxconpezta.supabase.co';
         const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6eHJ2a210dWVzeGNvbnBlenRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2MTI5MTEsImV4cCI6MjA5NTE4ODkxMX0.ZjlviwtgDwttZakunay73f-PMV5uQm07f0aWrg5gJJg';
         const res = await fetch(`${SUPA_URL}/rest/v1/email_captures`, {
           method: 'POST',
-          headers: {
-            'apikey': SUPA_KEY,
-            'Authorization': `Bearer ${SUPA_KEY}`,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
+          headers: { 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
           body: JSON.stringify({ name, email, phone, message: msg, source: 'website-contact-form' })
         });
-        if (!res.ok) throw new Error('Supabase error');
+        if (!res.ok) throw new Error();
         document.getElementById('contact-confirm').style.display = 'block';
         e.target.querySelectorAll('input,textarea').forEach(el => el.disabled = true);
         btn.style.display = 'none';
       } catch(err) {
-        // Fallback — still show thank you (don't lose the lead)
         document.getElementById('contact-confirm').style.display = 'block';
         e.target.querySelectorAll('input,textarea').forEach(el => el.disabled = true);
         btn.style.display = 'none';
