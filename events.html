@@ -8,28 +8,6 @@
 <link rel="stylesheet" href="site.css"/>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script src="image-slot.js"></script>
-<style>
-  .past-events { padding: 120px 0; background: var(--stone-050); }
-  .past-events .head { text-align: center; max-width: 700px; margin: 0 auto 64px; }
-  .past-events .head .eyebrow { justify-content: center; margin-bottom: 22px; }
-  .past-events .head h2 em { color: var(--accent); }
-  .past-events .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 36px; }
-  .past-card { background: var(--bg-surface); border: 1px solid var(--line-soft); display: flex; flex-direction: column; transition: all var(--dur-base) var(--ease-out); }
-  .past-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
-  .past-card .img { aspect-ratio: 16/9; position: relative; background: var(--walnut-100); }
-  .past-card .img image-slot { width: 100%; height: 100%; position: absolute; inset: 0; }
-  .past-card .body { padding: 32px 32px 36px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-  .past-card .meta-row { display: flex; gap: 12px; align-items: center; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); }
-  .past-card h3 { font-size: 26px; line-height: 1.2; color: var(--fg-brand); }
-  .past-card h3 em { color: var(--accent); }
-  .past-card p { font-size: 14px; line-height: 1.65; color: var(--fg-secondary); margin: 0; flex: 1; }
-  .open-door { padding: 100px 0; background: var(--bg-surface-tinted); text-align: center; }
-  .open-door .eyebrow { justify-content: center; margin-bottom: 22px; }
-  .open-door h2 { margin-bottom: 24px; font-size: clamp(34px,3.8vw,48px); }
-  .open-door h2 em { color: var(--accent); }
-  .open-door p { color: var(--fg-secondary); font-size: 17px; line-height: 1.65; max-width: 580px; margin: 0 auto 36px; }
-  .open-door .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-</style>
 </head>
 <body data-screen-label="07 Events">
 <header class="page-header" style="padding:200px 0 80px;">
@@ -41,19 +19,55 @@
     <p class="lead">Open days, family gatherings and seasonal celebrations at the manor and on Broad Oak Lane.</p>
   </div>
 </header>
-<section class="past-events">
+<section style="padding:120px 0;background:var(--stone-050);">
   <div class="container">
-    <div class="head"><div class="eyebrow"><span class="num">02</span>Recent highlights</div><h2>A glimpse at <em>life here</em>.</h2><p style="color:var(--fg-secondary);font-size:16px;line-height:1.6;margin-top:16px;">If you missed our most recent open days, here’s a flavour of what they’re like.</p></div>
-    <div class="grid">
-      <article class="past-card"><div class="img"><image-slot id="event-may" shape="rect" placeholder="Photo from the May 2026 open day" src="outdoor-painting-sunny.jpg"></image-slot></div><div class="body"><div class="meta-row"><span>Assisted Living Open Day</span><span style="width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0.5;"></span><span>30 May 2026</span></div><h3>Could Assisted Living be the <em>right next step</em>?</h3><p>Our most recent open day — tours of the grounds, the Barn, and the houses on Broad Oak Lane.</p><a href="https://broadoakmanor.co.uk/event/could-assisted-living-be-the-right-next-step-come-and-see-for-yourself/" target="_blank" rel="noopener" class="link-arrow">See the highlights <i data-lucide="arrow-right"></i></a></div></article>
-      <article class="past-card"><div class="img"><image-slot id="event-march" shape="rect" placeholder="Photo from the March 2026 open day" src="residents-outdoor-cafe.jpg"></image-slot></div><div class="body"><div class="meta-row"><span>Assisted Living Open Day</span><span style="width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0.5;"></span><span>26 March 2026</span></div><h3>Assisted Living Open Day <em>Highlights</em></h3><p>Step inside, have a look around, and see what everyday life can feel like with comfort, support and peace of mind.</p><a href="https://broadoakmanor.co.uk/event/assisted-living-open-day-26th-march-2026/" target="_blank" rel="noopener" class="link-arrow">See the highlights <i data-lucide="arrow-right"></i></a></div></article>
-      <article class="past-card"><div class="img"><image-slot id="event-summer" shape="rect" placeholder="Photo from the 2024 summer party" src="drawing-room-group.jpg"></image-slot></div><div class="body"><div class="meta-row"><span>Family Summer Party</span><span style="width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0.5;"></span><span>August 2024</span></div><h3>Broad Oak Manor’s <em>Summer Party</em>, 2024</h3><p>A delightful gathering that brought residents and their families together for a day of fun and relaxation in the gardens.</p><a href="https://broadoakmanor.co.uk/event/broad-oak-manors-summer-party-2024/" target="_blank" rel="noopener" class="link-arrow">See the highlights <i data-lucide="arrow-right"></i></a></div></article>
+    <div style="text-align:center;max-width:700px;margin:0 auto 64px;">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:22px;"><span class="num">02</span>Recent highlights</div>
+      <h2>A glimpse at <em>life here</em>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;">
+      <article style="background:var(--bg-surface);border:1px solid var(--line-soft);display:flex;flex-direction:column;">
+        <div style="aspect-ratio:16/9;position:relative;background:var(--walnut-100);"><image-slot id="event-may" shape="rect" placeholder="Photo from open day" src="outdoor-painting-sunny.jpg"></image-slot></div>
+        <div style="padding:32px;display:flex;flex-direction:column;gap:14px;flex:1;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);">Assisted Living Open Day · 30 May 2026</div>
+          <h3 style="font-size:22px;">Could Assisted Living be the <em>right next step</em>?</h3>
+          <p style="font-size:14px;color:var(--fg-secondary);line-height:1.65;">Tours of the grounds, the Barn, and the houses on Broad Oak Lane. Thank you to everyone who came along.</p>
+        </div>
+      </article>
+      <article style="background:var(--bg-surface);border:1px solid var(--line-soft);display:flex;flex-direction:column;">
+        <div style="aspect-ratio:16/9;position:relative;background:var(--walnut-100);"><image-slot id="event-march" shape="rect" placeholder="Photo from open day" src="residents-outdoor-cafe.jpg"></image-slot></div>
+        <div style="padding:32px;display:flex;flex-direction:column;gap:14px;flex:1;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);">Assisted Living Open Day · 26 March 2026</div>
+          <h3 style="font-size:22px;">Assisted Living Open Day <em>Highlights</em></h3>
+          <p style="font-size:14px;color:var(--fg-secondary);line-height:1.65;">Step inside, have a look around, and see what everyday life can feel like with comfort, support and peace of mind.</p>
+        </div>
+      </article>
+      <article style="background:var(--bg-surface);border:1px solid var(--line-soft);display:flex;flex-direction:column;">
+        <div style="aspect-ratio:16/9;position:relative;background:var(--walnut-100);"><image-slot id="event-summer" shape="rect" placeholder="Photo from summer party" src="drawing-room-group.jpg"></image-slot></div>
+        <div style="padding:32px;display:flex;flex-direction:column;gap:14px;flex:1;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);">Family Summer Party · August 2024</div>
+          <h3 style="font-size:22px;">Broad Oak Manor’s <em>Summer Party</em>, 2024</h3>
+          <p style="font-size:14px;color:var(--fg-secondary);line-height:1.65;">A delightful gathering that brought residents and their families together for a day of fun and relaxation in the gardens.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
-<section class="open-door"><div class="container-narrow"><div class="eyebrow"><span class="num">03</span>Open Door Policy</div><h2>You don’t <em>need an event</em>.</h2><p>Open Door means open door — most days we’re happy to give a tour by appointment, with no event and no occasion.</p><div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost">Get in touch</a></div></div></section>
 <section class="contact-band">
-  <div class="container"><div class="inner"><div><div class="eyebrow"><span class="num">05</span>Arrange a visit</div><h2>Come and <em>walk around</em>.</h2><p>The best way to know if Broad Oak is right for you is to see it.</p><div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost-light">All ways to get in touch</a></div></div><div class="contact-list"><div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div><div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div><div class="item"><div class="ic"><i data-lucide="map-pin"></i></div><div class="body"><div class="l">Visit</div><div class="v">Bramfield Road,<br/>Hertford SG14 2JA</div></div></div></div></div></div>
+  <div class="container">
+    <div class="inner">
+      <div>
+        <div class="eyebrow"><span class="num">05</span>Arrange a visit</div>
+        <h2>Come and <em>walk around</em>.</h2>
+        <p>The best way to know if Broad Oak is right for you is to see it. Most days, the kettle is on.</p>
+        <div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost-light">All ways to get in touch</a></div>
+      </div>
+      <div class="contact-list">
+        <div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div>
+        <div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 <script src="site.js"></script>
 <script>window.initSite({ page: 'events', heroTransparent: true });</script>
