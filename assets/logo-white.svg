@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1181 555" role="img" aria-label="Broad Oak Manor">
+  <style>
+    .bom-trunk { fill: #fff; }
+    .bom-leaf path { fill: #fff; }
+    .bom-text { font-family: 'EB Garamond', Georgia, serif; font-weight: 500; letter-spacing: 0.22em; fill: #fff; }
+    .bom-manor { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0.28em; fill: #fff; }
+    .bom-swoosh { fill: none; stroke: #fff; stroke-width: 1.5; }
+  </style>
+  <g transform="translate(590 195) scale(1.7)">
+    <path class="bom-trunk" d="M -4 0 Q -6 25 -8 50 L 8 50 Q 6 25 4 0 Z"></path>
+    <path class="bom-trunk" d="M -3 -2 Q -28 -8 -52 -28" stroke-width="2" fill="none" stroke="#fff"></path>
+    <path class="bom-trunk" d="M 3 -2 Q 28 -8 52 -28" stroke-width="2" fill="none" stroke="#fff"></path>
+    <path class="bom-trunk" d="M -2 -10 Q -18 -28 -32 -52" stroke-width="2" fill="none" stroke="#fff"></path>
+    <path class="bom-trunk" d="M 2 -10 Q 18 -28 32 -52" stroke-width="2" fill="none" stroke="#fff"></path>
+    <path class="bom-trunk" d="M 0 -12 L 0 -60" stroke-width="2" fill="none" stroke="#fff"></path>
+    <g class="bom-leaf">
+      <path d="M 0 -88 Q -6 -78 -4 -68 Q 0 -58 4 -68 Q 6 -78 0 -88 Z" fill="#fff"></path>
+      <path d="M -14 -78 Q -22 -68 -18 -58 Q -10 -52 -6 -62 Q -8 -72 -14 -78 Z" fill="#fff"></path>
+      <path d="M 14 -78 Q 22 -68 18 -58 Q 10 -52 6 -62 Q 8 -72 14 -78 Z" fill="#fff"></path>
+      <path d="M -28 -68 Q -36 -56 -30 -46 Q -20 -42 -16 -52 Q -20 -62 -28 -68 Z" fill="#fff"></path>
+      <path d="M 28 -68 Q 36 -56 30 -46 Q 20 -42 16 -52 Q 20 -62 28 -68 Z" fill="#fff"></path>
+      <path d="M -44 -54 Q -52 -42 -44 -34 Q -32 -32 -30 -42 Q -36 -50 -44 -54 Z" fill="#fff"></path>
+      <path d="M 44 -54 Q 52 -42 44 -34 Q 32 -32 30 -42 Q 36 -50 44 -54 Z" fill="#fff"></path>
+      <path d="M -58 -38 Q -64 -26 -54 -20 Q -44 -22 -42 -30 Q -50 -36 -58 -38 Z" fill="#fff"></path>
+      <path d="M 58 -38 Q 64 -26 54 -20 Q 44 -22 42 -30 Q 50 -36 58 -38 Z" fill="#fff"></path>
+      <path d="M -68 -20 Q -70 -10 -60 -6 Q -52 -10 -52 -18 Q -60 -22 -68 -20 Z" fill="#fff"></path>
+      <path d="M 68 -20 Q 70 -10 60 -6 Q 52 -10 52 -18 Q 60 -22 68 -20 Z" fill="#fff"></path>
+      <path d="M -12 -54 Q -18 -42 -10 -36 Q -2 -40 -4 -50 Q -8 -54 -12 -54 Z" fill="#fff"></path>
+      <path d="M 12 -54 Q 18 -42 10 -36 Q 2 -40 4 -50 Q 8 -54 12 -54 Z" fill="#fff"></path>
+      <path d="M -22 -34 Q -28 -22 -18 -18 Q -10 -22 -12 -32 Q -16 -36 -22 -34 Z" fill="#fff"></path>
+      <path d="M 22 -34 Q 28 -22 18 -18 Q 10 -22 12 -32 Q 16 -36 22 -34 Z" fill="#fff"></path>
+    </g>
+  </g>
+  <text class="bom-text" x="590" y="390" font-size="74" text-anchor="middle">BROAD OAK</text>
+  <path class="bom-swoosh" d="M 280 470 Q 350 458 420 470"></path>
+  <text class="bom-manor" x="590" y="480" font-size="40" text-anchor="middle">MANOR</text>
+  <path class="bom-swoosh" d="M 760 470 Q 830 458 900 470"></path>
+</svg>

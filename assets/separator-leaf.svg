@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" role="presentation">
+  <line x1="0" y1="12" x2="100" y2="12" stroke="currentColor" stroke-width="1"></line>
+  <line x1="140" y1="12" x2="240" y2="12" stroke="currentColor" stroke-width="1"></line>
+  <g transform="translate(120 12)" fill="currentColor">
+    <path d="M0 -8 C 4 -6 7 -3 7 0 C 7 3 4 6 0 8 C -4 6 -7 3 -7 0 C -7 -3 -4 -6 0 -8 Z" opacity="0.85"></path>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#fff" stroke-width="0.6" opacity="0.6"></line>
+  </g>
+</svg>
