@@ -4,7 +4,6 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Broad Oak Manor — Nursing &amp; assisted living in Hertford</title>
-<meta name="description" content="Private nursing home and assisted living in Hertford, Hertfordshire. CQC rated Outstanding for Caring. 29 private houses and a 23-bed nursing home in a Grade II listed manor."/>
 <link rel="stylesheet" href="colors_and_type.css"/>
 <link rel="stylesheet" href="site.css"/>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -13,24 +12,39 @@
   .about-teaser { padding: 120px 0; background: var(--stone-100); }
   .about-teaser .inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
   .about-teaser .text .eyebrow { margin-bottom: 22px; }
-  .about-teaser .text h2 { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(40px, 4.5vw, 64px); line-height: 1.02; color: var(--fg-brand); margin: 0 0 28px; }
+  .about-teaser .text h2 {
+    font-family: var(--font-display); font-style: italic; font-weight: 500;
+    font-size: clamp(40px, 4.5vw, 64px); line-height: 1.02;
+    color: var(--fg-brand); margin: 0 0 28px;
+  }
   .about-teaser .text h2 em { color: var(--accent); font-style: italic; }
   .about-teaser .text p { color: var(--fg-secondary); font-size: 18px; line-height: 1.7; margin: 0 0 32px; max-width: 560px; }
-  .about-teaser .text .link-arrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--walnut-800); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+  .about-teaser .text .link-arrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--walnut-800); text-decoration: none;
+    border-bottom: 1px solid var(--accent); padding-bottom: 4px;
+  }
   .about-teaser .text .link-arrow:hover { color: var(--accent); }
   .about-teaser .text .link-arrow svg { width: 16px; height: 16px; }
   .about-teaser .photo { aspect-ratio: 4/5; position: relative; }
   .about-teaser .photo image-slot { width: 100%; height: 100%; position: absolute; inset: 0; }
-  @media (max-width: 900px) { .about-teaser .inner { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 900px) {
+    .about-teaser .inner { grid-template-columns: 1fr; gap: 40px; }
+  }
 </style>
 </head>
 <body data-screen-label="01 Home">
+
+<!-- ============ HERO ============ -->
 <section class="hero hero-with-video">
   <div class="hero-image">
     <image-slot id="hero-fallback" shape="rect" placeholder="Broad Oak Manor — exterior or grounds, atmospheric" src="exterior-manor.jpg"></image-slot>
     <iframe class="hero-video"
       src="https://player.vimeo.com/video/1194718975?badge=0&autopause=0&autoplay=1&loop=1&muted=1&background=1&controls=0&playsinline=1&dnt=1"
-      title="Broad Oak Manor" frameborder="0"
+      title="Broad Oak Manor"
+      frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
       referrerpolicy="strict-origin-when-cross-origin"></iframe>
   </div>
@@ -49,34 +63,38 @@
     </div>
   </div>
 </section>
+
+<!-- ============ TWO-OFFERING ROUTER ============ -->
 <section class="audience" id="audience">
   <div class="container">
     <div class="head">
       <div class="eyebrow"><span class="num">01</span>Where to begin</div>
       <h2>Two paths through the <em>manor gates</em>.</h2>
-      <p>Two quite different ways of living at Broad Oak — one inside the manor house, one in its own home on the lane.</p>
+      <p>Two quite different ways of living at Broad Oak — one inside the manor house, one in its own home on the lane. Pick the one closer to what you're looking for, or open the guided helper if you're not yet sure.</p>
     </div>
     <div class="grid">
       <button class="audience-card" data-open-qa="nursing">
         <span class="arrow"><i data-lucide="arrow-right"></i></span>
         <span class="tag">Nursing Home · in the manor</span>
         <h3>I'm looking for <em>nursing care</em>.</h3>
-        <p>A private bedroom inside our Queen Anne manor, with a registered nurse on the premises 24/7 — including dementia, palliative and respite care.</p>
+        <p>A private bedroom inside our Queen Anne manor, with a registered nurse on the premises 24/7 — including dementia, palliative and respite care. For yourself, or for someone you love.</p>
         <span class="meta">23 private bedrooms · 24/7 skilled nursing</span>
       </button>
       <button class="audience-card" data-open-qa="assisted">
         <span class="arrow"><i data-lucide="arrow-right"></i></span>
         <span class="tag">Assisted Living · Broad Oak Lane</span>
         <h3>I'm looking at <em>assisted living</em>.</h3>
-        <p>Your own house on the lane — front door, kitchen, garden. Live independently, or add a tailored care package from one to 24 hours a day.</p>
+        <p>Your own house on the lane — front door, kitchen, garden. Live independently, or add a tailored care package from one to 24 hours a day. For yourself, your partner, or a loved one.</p>
         <span class="meta">29 luxury houses · care if and when you need it</span>
       </button>
     </div>
-    <div style="text-align:center;margin-top:40px;font-family:var(--font-display);font-style:italic;color:var(--fg-muted);font-size:15px;">
-      Not sure which? &nbsp;<button data-open-qa style="color:var(--walnut-800);font-family:inherit;font-style:italic;font-size:inherit;border-bottom:1px solid var(--accent);padding-bottom:2px;cursor:pointer;">Try our guided helper →</button>
+    <div style="text-align: center; margin-top: 40px; font-family: var(--font-display); font-style: italic; color: var(--fg-muted); font-size: 15px;">
+      Not sure which? &nbsp;<button data-open-qa style="color: var(--walnut-800); font-family: inherit; font-style: italic; font-size: inherit; border-bottom: 1px solid var(--accent); padding-bottom: 2px; cursor: pointer;">Try our guided helper →</button>
     </div>
   </div>
 </section>
+
+<!-- ============ TESTIMONIALS ============ -->
 <section class="testimonials">
   <div class="container">
     <div class="head">
@@ -84,23 +102,62 @@
       <h2>What <em>residents and families</em> tell us.</h2>
     </div>
     <div class="grid">
-      <article class="card"><div class="quote-mark">"</div><blockquote>The care is outstanding and, importantly, very flexible. It can be tailored and adjusted as needs change — which gives enormous reassurance.</blockquote><div class="att"><div class="stars">★ ★ ★ ★ ★</div><div class="name">Family of a resident</div><div class="role">Assisted Living, Broad Oak Lane</div></div></article>
-      <article class="card"><div class="quote-mark">"</div><blockquote>We are really happy with the care at Broad Oak. Plenty of activities, and it's the whole team that have created a safe space.</blockquote><div class="att"><div class="stars">★ ★ ★ ★ ★</div><div class="name">Family member</div><div class="role">Nursing Home</div></div></article>
-      <article class="card"><div class="quote-mark">"</div><blockquote>The setting is absolutely beautiful — peaceful, private and very safe, yet still conveniently located on the outskirts of town.</blockquote><div class="att"><div class="stars">★ ★ ★ ★ ★</div><div class="name">Family member</div><div class="role">Assisted Living, Broad Oak Lane</div></div></article>
+      <article class="card">
+        <div class="quote-mark">"</div>
+        <blockquote>The care is outstanding and, importantly, very flexible. It can be tailored and adjusted as needs change — which gives enormous reassurance.</blockquote>
+        <div class="att">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <div class="name">Family of a resident</div>
+          <div class="role">Assisted Living, Broad Oak Lane</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="quote-mark">"</div>
+        <blockquote>We are really happy with the care at Broad Oak. Plenty of activities, and it's the whole team that have created a safe space. It's a difficult decision finding the right care home — I think we found the perfect place.</blockquote>
+        <div class="att">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <div class="name">Family member</div>
+          <div class="role">Nursing Home</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="quote-mark">"</div>
+        <blockquote>The setting is absolutely beautiful — peaceful, private and very safe, yet still conveniently located on the outskirts of town.</blockquote>
+        <div class="att">
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <div class="name">Family member</div>
+          <div class="role">Assisted Living, Broad Oak Lane</div>
+        </div>
+      </article>
     </div>
-    <div class="review-links"><span>Read more reviews on</span><a href="https://www.google.com/maps/search/Broad+Oak+Manor+Nursing+Home+Hertford+reviews" target="_blank" rel="noopener">Google</a><a href="https://www.carehome.co.uk/carehome.cfm/searchazref/20001040BROA" target="_blank" rel="noopener">carehome.co.uk</a></div>
+    <div class="review-links">
+      <span>Read more reviews on</span>
+      <a href="https://www.google.com/maps/search/Broad+Oak+Manor+Nursing+Home+Hertford+reviews" target="_blank" rel="noopener">Google</a>
+      <a href="https://www.carehome.co.uk/carehome.cfm/searchazref/20001040BROA" target="_blank" rel="noopener">carehome.co.uk</a>
+    </div>
   </div>
 </section>
+
+<!-- ============ CQC ============ -->
 <section class="cqc">
   <div class="container">
     <div class="row">
-      <div class="badge" style="border-color:var(--accent);background:var(--walnut-100);"><div class="v" style="font-size:18px;">Outstanding</div><div class="l">in Caring</div></div>
-      <div class="text"><div class="eyebrow">Care Quality Commission</div><h3>Rated <em>Outstanding</em> for caring, Good overall.</h3><p>Broad Oak Manor is regulated by the Care Quality Commission. At our last full inspection we were rated Good across all five domains, with Outstanding awarded in Caring.</p></div>
+      <div class="badge" style="border-color: var(--accent); background: var(--walnut-100);">
+        <div class="v" style="font-size: 18px;">Outstanding</div>
+        <div class="l">in Caring</div>
+      </div>
+      <div class="text">
+        <div class="eyebrow">Care Quality Commission</div>
+        <h3>Rated <em>Outstanding</em> for caring, Good overall.</h3>
+        <p>Broad Oak Manor is regulated by the Care Quality Commission. At our last full inspection we were rated Good across all five domains, with Outstanding awarded in Caring — the area we hold above all others.</p>
+      </div>
       <div class="pill"><i data-lucide="check"></i>Inspected</div>
       <a href="about.html#cqc" class="link-arrow">See full breakdown <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
+
+<!-- ============ CONTACT BAND ============ -->
 <section class="contact-band">
   <div class="container">
     <div class="inner">
@@ -108,17 +165,41 @@
         <div class="eyebrow"><span class="num">04</span>Open Door Policy</div>
         <h2>Come and <em>see for yourself</em>.</h2>
         <p>Our management team is always available to answer questions or offer advice — without pressure, and without obligation. The kettle is on.</p>
-        <div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost-light">All ways to get in touch</a></div>
+        <div class="actions">
+          <a href="#" class="btn accent" data-open-qa>Find your path</a>
+          <a href="contact.html" class="btn ghost-light">All ways to get in touch</a>
+        </div>
       </div>
       <div class="contact-list">
-        <div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call us</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div>
-        <div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email us</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div>
-        <div class="item"><div class="ic"><i data-lucide="map-pin"></i></div><div class="body"><div class="l">Find us</div><div class="v">Bramfield Road,<br/>Hertford SG14 2JA</div></div></div>
+        <div class="item">
+          <div class="ic"><i data-lucide="phone"></i></div>
+          <div class="body">
+            <div class="l">Call us</div>
+            <div class="v"><a href="tel:01992551900">01992 551900</a></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ic"><i data-lucide="mail"></i></div>
+          <div class="body">
+            <div class="l">Email us</div>
+            <div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ic"><i data-lucide="map-pin"></i></div>
+          <div class="body">
+            <div class="l">Find us</div>
+            <div class="v">Bramfield Road,<br/>Hertford SG14 2JA</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <script src="site.js"></script>
-<script>window.initSite({ page: 'home', heroTransparent: true });</script>
+<script>
+  window.initSite({ page: 'home', heroTransparent: true });
+</script>
 </body>
 </html>
