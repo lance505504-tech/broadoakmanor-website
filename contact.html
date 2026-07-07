@@ -8,76 +8,56 @@
 <link rel="stylesheet" href="site.css"/>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script src="image-slot.js"></script>
-<style>
-  .contact-hero { padding: 200px 0 100px; background: var(--stone-050); text-align: center; position: relative; margin-top: -97px; border-bottom: 1px solid var(--line-soft); }
-  .contact-hero .eyebrow { justify-content: center; margin-bottom: 24px; }
-  .contact-hero h1 { font-size: clamp(48px,6vw,84px); margin-bottom: 28px; }
-  .contact-hero h1 em { color: var(--accent); }
-  .contact-hero p { color: var(--fg-secondary); font-size: 18px; line-height: 1.65; max-width: 580px; margin: 0 auto; }
-  .ways { padding: 100px 0; background: var(--stone-050); }
-  .ways .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
-  .way { background: var(--bg-surface); padding: 48px 40px; border: 1px solid var(--line-soft); text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; transition: all var(--dur-base) var(--ease-out); }
-  .way:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
-  .way .icon { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
-  .way .icon svg { width: 24px; height: 24px; stroke-width: 1.5; }
-  .way .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--accent); }
-  .way h3 { font-size: 24px; font-style: italic; margin-bottom: 4px; }
-  .way .v { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 22px; color: var(--walnut-800); }
-  .way p { font-size: 14px; color: var(--fg-secondary); line-height: 1.6; }
-  .way .featured-cta { margin-top: auto; padding-top: 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--walnut-800); border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
-  .qa-cta { background: var(--walnut-900); color: var(--stone-050); padding: 100px 0; text-align: center; }
-  .qa-cta .eyebrow { justify-content: center; color: var(--gold-300); margin-bottom: 24px; }
-  .qa-cta h2 { color: var(--stone-050); font-size: clamp(40px,5vw,64px); margin-bottom: 22px; }
-  .qa-cta h2 em { color: var(--gold-300); }
-  .qa-cta p { color: rgba(251,248,241,0.85); max-width: 580px; margin: 0 auto 36px; font-size: 18px; line-height: 1.6; }
-  .visit-block { padding: 100px 0; background: var(--stone-050); }
-  .visit-block .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
-  .visit-block .map-col { aspect-ratio: 4/3; background: var(--walnut-100); position: relative; border: 1px solid var(--line-soft); overflow: hidden; }
-  .visit-block .map-col .stylized-map { width: 100%; height: 100%; position: relative; background: linear-gradient(135deg,var(--gold-050) 0%,var(--stone-100) 100%); }
-  .visit-block .map-col svg.map { width: 100%; height: 100%; display: block; }
-  .visit-block .map-col .pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-100%); width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--stone-050); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(176,140,74,0.4); }
-  .visit-block .map-col .pin svg { width: 16px; height: 16px; }
-  .visit-block .map-col .pin::after { content: ""; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: var(--accent); border-radius: 50%; opacity: 0.4; animation: ping 2s infinite var(--ease-out); }
-  @keyframes ping { 0%{opacity:0.6;transform:translateX(-50%) scale(1);}100%{opacity:0;transform:translateX(-50%) scale(3);} }
-  .visit-block .label-overlay { position: absolute; bottom: 20px; left: 20px; right: 20px; background: var(--bg-surface); padding: 16px 20px; box-shadow: var(--shadow-card); }
-  .visit-block .label-overlay .l { font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--accent); margin-bottom: 4px; }
-  .visit-block .label-overlay .v { font-family: var(--font-display); font-style: italic; font-size: 18px; color: var(--fg-brand); }
-  .visit-info .eyebrow { margin-bottom: 24px; }
-  .visit-info h2 { margin-bottom: 24px; font-size: clamp(36px,4vw,52px); }
-  .visit-info h2 em { color: var(--accent); }
-  .visit-info p { color: var(--fg-secondary); font-size: 16px; line-height: 1.7; margin-bottom: 18px; }
-  .visit-info .info-rows { margin-top: 32px; }
-  .visit-info .info-row { display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--line-soft); }
-  .visit-info .info-row:last-child { border-bottom: 1px solid var(--line-soft); }
-  .visit-info .info-row .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); padding-top: 4px; }
-  .visit-info .info-row .value { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: 18px; color: var(--fg-brand); line-height: 1.4; }
-  .visit-info .info-row .value .meta { font-family: var(--font-sans); font-style: normal; font-weight: 400; font-size: 13px; color: var(--fg-muted); margin-top: 4px; display: block; }
-</style>
 </head>
 <body data-screen-label="08 Contact">
-<section class="contact-hero">
+<section style="padding: 200px 0 100px; background: var(--stone-050); text-align: center; margin-top: -97px; border-bottom: 1px solid var(--line-soft);">
   <div class="container-narrow">
-    <div class="crumbs" style="display:flex;justify-content:center;gap:12px;color:var(--fg-muted);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:36px;"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
-    <div class="eyebrow"><span class="num">vii.</span>The Open Door</div>
-    <h1>Get in <em>touch</em>.</h1>
-    <p>Several ways to reach us — pick the one that suits you. Our management team is always available to answer questions or give advice, with no obligation.</p>
+    <div class="eyebrow" style="justify-content:center;margin-bottom:24px;"><span class="num">vii.</span>The Open Door</div>
+    <h1 style="font-size:clamp(48px,6vw,84px);margin-bottom:28px;">Get in <em style="color:var(--accent);">touch</em>.</h1>
+    <p style="color:var(--fg-secondary);font-size:18px;line-height:1.65;max-width:580px;margin:0 auto;">Several ways to reach us — pick the one that suits you.</p>
   </div>
 </section>
-<section class="ways">
+<section style="padding:100px 0;background:var(--stone-050);">
   <div class="container">
-    <div class="grid">
-      <div class="way"><div class="icon"><i data-lucide="message-circle-question"></i></div><div class="label">Best for first contact</div><h3>Find your <em>path</em></h3><p>A short guided helper — three questions, and we'll route you to the right person on our team.</p><button class="featured-cta" data-open-qa>Start the guided helper →</button></div>
-      <div class="way"><div class="icon"><i data-lucide="phone"></i></div><div class="label">Best for urgent matters</div><h3>Call <em>us</em></h3><p class="v"><a href="tel:01992551900">01992 551900</a></p><p>A member of our team answers the phone in person, seven days a week.</p><div class="featured-cta">Mon – Sun · 8am – 8pm</div></div>
-      <div class="way"><div class="icon"><i data-lucide="mail"></i></div><div class="label">Best for detailed enquiries</div><h3>Email <em>us</em></h3><p class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></p><p>For brochure requests, longer questions, or referrers sending discharge summaries.</p><div class="featured-cta">We aim to reply quickly</div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+      <div style="background:var(--bg-surface);padding:48px 40px;border:1px solid var(--line-soft);text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;">
+        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;"><i data-lucide="message-circle-question" style="width:24px;height:24px;"></i></div>
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);">Best for first contact</div>
+        <h3 style="font-size:24px;font-style:italic;">Find your <em>path</em></h3>
+        <p style="font-size:14px;color:var(--fg-secondary);line-height:1.6;">A short guided helper — three questions, and we’ll route you to the right person.</p>
+        <button data-open-qa style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:var(--walnut-800);border-bottom:1px solid var(--accent);padding-bottom:4px;cursor:pointer;">Start the guided helper →</button>
+      </div>
+      <div style="background:var(--bg-surface);padding:48px 40px;border:1px solid var(--line-soft);text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;">
+        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;"><i data-lucide="phone" style="width:24px;height:24px;"></i></div>
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);">Best for urgent matters</div>
+        <h3 style="font-size:24px;font-style:italic;">Call <em>us</em></h3>
+        <div style="font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;color:var(--walnut-800);"><a href="tel:01992551900" style="text-decoration:none;color:inherit;">01992 551900</a></div>
+        <p style="font-size:14px;color:var(--fg-secondary);line-height:1.6;">A member of our team answers in person, seven days a week.</p>
+      </div>
+      <div style="background:var(--bg-surface);padding:48px 40px;border:1px solid var(--line-soft);text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;">
+        <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;"><i data-lucide="mail" style="width:24px;height:24px;"></i></div>
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:var(--accent);">Best for detailed enquiries</div>
+        <h3 style="font-size:24px;font-style:italic;">Email <em>us</em></h3>
+        <div style="font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;color:var(--walnut-800);"><a href="mailto:info@broadoakmanor.co.uk" style="text-decoration:none;color:inherit;">info@broadoakmanor.co.uk</a></div>
+        <p style="font-size:14px;color:var(--fg-secondary);line-height:1.6;">We aim to reply as quickly as we can.</p>
+      </div>
     </div>
   </div>
 </section>
-<section class="qa-cta"><div class="container-narrow"><div class="eyebrow"><span class="num">02</span>Not sure where to start?</div><h2>Three questions. <em>One useful reply</em>.</h2><p>Our guided helper takes about 90 seconds and routes your enquiry to the right person on our team.</p><a href="#" class="btn accent" data-open-qa style="background:var(--gold-500);">Find your path</a></div></section>
-<section class="visit-block">
+<section class="contact-band">
   <div class="container">
-    <div class="grid">
-      <div class="map-col"><div class="stylized-map"><svg class="map" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.5" fill="rgba(176,140,74,0.18)"/></pattern></defs><rect width="400" height="300" fill="url(#dots)"/><path d="M 0 220 Q 80 200 140 210 T 280 200 T 400 215" fill="none" stroke="rgba(107,140,109,0.35)" stroke-width="6"/><path d="M 0 80 Q 100 100 200 130 T 400 180" fill="none" stroke="rgba(110,83,64,0.25)" stroke-width="2"/><path d="M 60 0 Q 90 80 130 150 T 200 280" fill="none" stroke="rgba(110,83,64,0.25)" stroke-width="2"/><path d="M 130 100 Q 200 80 270 110 Q 290 160 250 180 Q 200 200 150 180 Q 110 150 130 100 Z" fill="rgba(176,140,74,0.10)" stroke="rgba(176,140,74,0.4)" stroke-width="1.5" stroke-dasharray="3 3"/><text x="200" y="155" text-anchor="middle" font-family="EB Garamond, serif" font-style="italic" font-size="11" fill="rgba(110,83,64,0.7)" letter-spacing="2">BROAD OAK GROUNDS</text><g transform="translate(360,40)" opacity="0.45"><circle cx="0" cy="0" r="16" fill="none" stroke="rgba(110,83,64,0.5)" stroke-width="1"/><path d="M 0 -12 L 3 0 L 0 12 L -3 0 Z" fill="rgba(110,83,64,0.7)"/><text x="0" y="-20" text-anchor="middle" font-family="EB Garamond" font-size="9" font-style="italic" fill="rgba(110,83,64,0.7)">N</text></g><g transform="translate(70,240)"><circle r="5" fill="rgba(110,83,64,0.4)"/><text x="10" y="3" font-family="EB Garamond" font-size="9" font-style="italic" fill="rgba(110,83,64,0.7)">Hertford station</text></g></svg><div class="pin"><i data-lucide="home"></i></div></div><div class="label-overlay"><div class="l">Find us</div><div class="v">Broad Oak Manor, Bramfield Road, Hertford SG14 2JA</div></div></div>
-      <div class="visit-info"><div class="eyebrow"><span class="num">03</span>Come and see us</div><h2>The best way to <em>know</em> us is to <em>walk in</em>.</h2><p>Set in private grounds on the outskirts of Hertford — peaceful, safe, and within walking distance of the train station.</p><div class="info-rows"><div class="info-row"><div class="label">Address</div><div class="value">Broad Oak Manor<br/>Bramfield Road, Hertford<br/>SG14 2JA</div></div><div class="info-row"><div class="label">By train</div><div class="value">Hertford North or East<span class="meta">Both stations are walkable from the manor</span></div></div><div class="info-row"><div class="label">By car</div><div class="value">Ample free parking on site<span class="meta">Pull up and park — no restrictions</span></div></div><div class="info-row"><div class="label">Visiting</div><div class="value">Open Door Policy<span class="meta">Visits welcome 8am – 8pm, every day.</span></div></div></div></div>
+    <div class="inner">
+      <div>
+        <div class="eyebrow"><span class="num">02</span>Find us</div>
+        <h2>Bramfield Road, <em>Hertford</em>.</h2>
+        <p>Set in private grounds on the outskirts of Hertford — peaceful, safe, and within walking distance of the train station. Visits welcome every day.</p>
+        <div class="actions"><a href="#" class="btn accent" data-open-qa>Arrange a visit</a></div>
+      </div>
+      <div class="contact-list">
+        <div class="item"><div class="ic"><i data-lucide="map-pin"></i></div><div class="body"><div class="l">Address</div><div class="v">Broad Oak Manor, Bramfield Road,<br/>Hertford SG14 2JA</div></div></div>
+        <div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Phone</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div>
+        <div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div>
+      </div>
     </div>
   </div>
 </section>

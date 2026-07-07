@@ -18,10 +18,10 @@
   .story-photo--wide { aspect-ratio: 3/2; }
   .cqc--detailed { background: var(--bg-surface); }
   .cqc--detailed .cqc-head { max-width: 720px; margin: 0 0 56px; }
-  .cqc--detailed .cqc-head h2 { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(36px,4vw,56px); line-height: 1.05; color: var(--fg-brand); margin: 16px 0 20px; }
+  .cqc--detailed .cqc-head h2 { font-family: var(--font-display); font-style: italic; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; color: var(--fg-brand); margin: 16px 0 20px; }
   .cqc--detailed .cqc-head h2 em { color: var(--accent); font-style: italic; }
   .cqc--detailed .cqc-head .lead { font-size: 17px; line-height: 1.7; color: var(--fg-secondary); margin: 0; }
-  .cqc--detailed .cqc-domains { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+  .cqc--detailed .cqc-domains { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
   .cqc--detailed .domain { padding: 32px 24px; border-right: 1px solid var(--line-soft); display: flex; flex-direction: column; gap: 14px; min-height: 140px; justify-content: space-between; }
   .cqc--detailed .domain:last-child { border-right: 0; }
   .cqc--detailed .domain .dk { font-family: var(--font-sans); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--fg-muted); }
@@ -36,37 +36,43 @@
   .cqc--detailed .cqc-foot .dates .dot { color: var(--fg-muted); }
   .cqc--detailed .cqc-foot .link-arrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--walnut-800); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
   .cqc--detailed .cqc-foot .link-arrow:hover { color: var(--accent); }
-  @media (max-width: 760px) { .cqc--detailed .cqc-domains { grid-template-columns: 1fr 1fr; } .cqc--detailed .domain { border-right: 1px solid var(--line-soft) !important; border-bottom: 1px solid var(--line-soft); } .cqc--detailed .domain:nth-child(2n) { border-right: 0 !important; } }
+  .cqc--detailed .cqc-foot .link-arrow svg { width: 14px; height: 14px; }
 </style>
 </head>
 <body data-screen-label="06 About">
 <header class="page-header">
-  <div class="photo"><image-slot id="about-header" shape="rect" placeholder="An exterior shot of the manor" src="summer-bbq-group.jpg"></image-slot></div>
+  <div class="photo"><image-slot id="about-header" shape="rect" placeholder="An exterior shot of the manor — wide, atmospheric" src="summer-bbq-group.jpg"></image-slot></div>
   <div class="container">
     <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
     <div class="eyebrow"><span class="num">iv.</span>Our story</div>
     <h1>We built this home for our own family first — and have run it the same way ever since.</h1>
-    <p class="lead">Broad Oak Manor began in 1984, when our family couldn't find the kind of care we wanted for the people we loved. So we made it ourselves. Forty-plus years on, it's still family-owned, still in the same Queen Anne house, and still measured by the only standard that ever mattered to us: care that actually means something to the person receiving it.</p>
+    <p class="lead">Broad Oak Manor began in 1984, when our family couldn’t find the kind of care we wanted for the people we loved. So we made it ourselves. Forty-plus years on, it’s still family-owned, still in the same Queen Anne house, and still measured by the only standard that ever mattered to us: care that actually means something to the person receiving it.</p>
   </div>
 </header>
 <section class="story">
   <div class="container">
     <div class="grid">
-      <div class="story-photo story-photo--wide"><image-slot id="about-manor" shape="rect" placeholder="The manor facade" src="courtyard-roses.jpg"></image-slot></div>
+      <div class="story-photo story-photo--wide"><image-slot id="about-manor" shape="rect" placeholder="The manor’s listed facade" src="courtyard-roses.jpg"></image-slot></div>
       <div class="story-text">
         <div class="eyebrow"><span class="num">01</span>The building</div>
         <h2>A house with a <em>long memory</em>.</h2>
         <p>Broad Oak Manor is a Queen Anne, Grade II listed manor house. For most of its life it was a private family home — and you can still feel that in the rooms.</p>
         <p>For over forty years we have run it as a nursing home, with great care to preserve what makes the building special while quietly bringing it up to modern standards of care, safety and accessibility.</p>
-        <p>The gardens are stunning, private, and walkable. Beyond them lie 29 thoughtfully-designed houses on Broad Oak Lane — our assisted-living community.</p>
-        <figure class="story-quote"><p class="pull-quote">The grounds themselves are stunning and create a calm, tranquil environment that puts you at ease the moment you arrive.</p><figcaption><span class="stars">★ ★ ★ ★ ★</span><span class="who">Family member</span><span class="source">Review on carehome.co.uk</span></figcaption></figure>
+        <p>The gardens are stunning, private, and walkable. Beyond them lie 29 thoughtfully-designed houses on Broad Oak Lane.</p>
+        <figure class="story-quote">
+          <p class="pull-quote">The grounds themselves are stunning and create a calm, tranquil environment that puts you at ease the moment you arrive.</p>
+          <figcaption><span class="stars">★ ★ ★ ★ ★</span><span class="who">Family member</span><span class="source">Review on carehome.co.uk</span></figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 <section class="values">
   <div class="container">
-    <div class="head"><div><div class="eyebrow on-dark"><span class="num">02</span>Our promise</div><h2>Three things <em>guide</em> everything we do.</h2></div><p>These aren't slogans. They're how we choose the people we hire, the way we train them, the conversations we have with families, and the decisions we make about the home's future.</p></div>
+    <div class="head">
+      <div><div class="eyebrow on-dark"><span class="num">02</span>Our promise</div><h2>Three things <em>guide</em> everything we do.</h2></div>
+      <p>These aren’t slogans. They’re how we choose the people we hire, the way we train them, and the decisions we make about the home’s future.</p>
+    </div>
     <div class="grid">
       <div class="pillar"><div class="num">i.</div><h3>Independence</h3><p>Highly trained staff who help you maintain your confidence in your own abilities and your own daily routine.</p></div>
       <div class="pillar"><div class="num">ii.</div><h3>Individuality</h3><p>Care that never wavers in its high standards, but always shapes itself to who you are.</p></div>
@@ -74,33 +80,24 @@
     </div>
   </div>
 </section>
-<section class="story" style="background:var(--stone-100);">
-  <div class="container">
-    <div class="grid" style="grid-template-columns:0.9fr 1.1fr;">
-      <div class="story-text">
-        <div class="eyebrow"><span class="num">03</span>Privately owned</div>
-        <h2>Not a <em>chain</em>. A family.</h2>
-        <p>Decisions at Broad Oak Manor are made in the building, by the people who run it. There is no head office, no quarterly target, no acquisition strategy.</p>
-        <p>This matters more than you might think. It is the reason we can take on a hospital discharge at short notice. The reason a member of staff can sit and read with a resident for an hour.</p>
-      </div>
-      <div class="story-photo"><image-slot id="about-team" shape="rect" placeholder="Staff or owners portrait" src="drawing-room-crafts.jpg"></image-slot></div>
-    </div>
-  </div>
-</section>
 <section class="amenities">
   <div class="container">
-    <div class="head"><div class="eyebrow"><span class="num">04</span>The setting</div><h2>Set in the <em>Hertfordshire countryside</em>.</h2><p class="lead">Set in private grounds on the edge of Hertford — open countryside, birdsong, and wildlife on the doorstep.</p></div>
+    <div class="head"><div class="eyebrow"><span class="num">04</span>The setting</div><h2>Set in the <em>Hertfordshire countryside</em>.</h2></div>
     <div class="grid">
       <div class="amenity"><i data-lucide="train"></i><div class="t">Hertford station</div><div class="d">Walking distance. London Liverpool Street in 50 minutes.</div></div>
-      <div class="amenity"><i data-lucide="trees"></i><div class="t">Private grounds</div><div class="d">Stunning gardens that create a calm, tranquil environment.</div></div>
+      <div class="amenity"><i data-lucide="trees"></i><div class="t">Private grounds</div><div class="d">Stunning gardens from the moment you arrive.</div></div>
       <div class="amenity"><i data-lucide="shield-check"></i><div class="t">Safe and secure</div><div class="d">Set back from the road, with a secure perimeter and on-site staff at all times.</div></div>
-      <div class="amenity"><i data-lucide="map-pin"></i><div class="t">Close to town</div><div class="d">A few minutes' drive to Hertford's shops, cafés and weekly market.</div></div>
+      <div class="amenity"><i data-lucide="map-pin"></i><div class="t">Close to town</div><div class="d">A few minutes’ drive to Hertford’s shops, cafés and weekly market.</div></div>
     </div>
   </div>
 </section>
-<section class="cqc cqc--detailed" id="cqc" style="padding:100px 0;">
+<section class="cqc cqc--detailed" id="cqc" style="padding: 100px 0;">
   <div class="container">
-    <div class="cqc-head"><div class="eyebrow"><span class="num">05</span>Care Quality Commission</div><h2>Rated <em>Outstanding</em> for caring.</h2><p class="lead">Our overall rating from the CQC is Good, with the inspectors awarding Outstanding in the Caring domain.</p></div>
+    <div class="cqc-head">
+      <div class="eyebrow"><span class="num">04</span>Care Quality Commission</div>
+      <h2>Rated <em>Outstanding</em> for caring.</h2>
+      <p class="lead">Our overall rating from the CQC is Good, with the inspectors awarding Outstanding in the Caring domain — the area we hold above all others.</p>
+    </div>
     <div class="cqc-domains">
       <div class="domain"><div class="dk">Safe</div><div class="dv">Good</div></div>
       <div class="domain"><div class="dk">Effective</div><div class="dv">Good</div></div>
@@ -109,13 +106,27 @@
       <div class="domain"><div class="dk">Well-led</div><div class="dv">Good</div></div>
     </div>
     <div class="cqc-foot">
-      <div class="dates"><span><strong>Last inspected</strong> 27 November 2019</span><span class="dot">·</span><span><strong>Report published</strong> 11 February 2020</span><span class="dot">·</span><span><strong>Latest review</strong> 6 July 2023</span></div>
+      <div class="dates"><span><strong>Last inspected</strong> 27 November 2019</span><span class="dot">·</span><span><strong>Report published</strong> 11 February 2020</span></div>
       <a href="https://www.cqc.org.uk/location/1-128948967" target="_blank" rel="noopener" class="link-arrow">Read the full CQC report <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
 <section class="contact-band">
-  <div class="container"><div class="inner"><div><div class="eyebrow"><span class="num">06</span>Open Door Policy</div><h2>The kettle is <em>on</em>.</h2><p>The best way to understand Broad Oak Manor is to walk around it.</p><div class="actions"><a href="#" class="btn accent" data-open-qa>Arrange a visit</a><a href="contact.html" class="btn ghost-light">Get in touch</a></div></div><div class="contact-list"><div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div><div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div><div class="item"><div class="ic"><i data-lucide="map-pin"></i></div><div class="body"><div class="l">Visit</div><div class="v">Bramfield Road,<br/>Hertford SG14 2JA</div></div></div></div></div></div>
+  <div class="container">
+    <div class="inner">
+      <div>
+        <div class="eyebrow"><span class="num">05</span>Open Door Policy</div>
+        <h2>The kettle is <em>on</em>.</h2>
+        <p>The best way to understand Broad Oak Manor is to walk around it.</p>
+        <div class="actions"><a href="#" class="btn accent" data-open-qa>Arrange a visit</a><a href="contact.html" class="btn ghost-light">Get in touch</a></div>
+      </div>
+      <div class="contact-list">
+        <div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div>
+        <div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div>
+        <div class="item"><div class="ic"><i data-lucide="map-pin"></i></div><div class="body"><div class="l">Visit</div><div class="v">Bramfield Road,<br/>Hertford SG14 2JA</div></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 <script src="site.js"></script>
 <script>window.initSite({ page: 'about', heroTransparent: true });</script>
