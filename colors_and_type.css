@@ -7,9 +7,6 @@
    — NOT a green / forest brand.
    ============================================================= */
 
-/* ---------- Webfonts ----------
-   EB Garamond mirrors the classical serif of the wordmark.
-   Inter for clean UI / micro-copy. */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
@@ -61,37 +58,61 @@
   --font-display: 'EB Garamond', 'Garamond', 'Hoefler Text', 'Times New Roman', Times, serif;
   --font-serif: 'EB Garamond', 'Garamond', 'Hoefler Text', 'Times New Roman', Times, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --fs-xs: 0.75rem; --fs-sm: 0.875rem; --fs-base: 1rem; --fs-md: 1.125rem;
-  --fs-lg: 1.5rem; --fs-xl: 2rem; --fs-2xl: 2.75rem; --fs-3xl: 3.75rem; --fs-4xl: 5rem;
-  --lh-tight: 1.1; --lh-snug: 1.25; --lh-base: 1.55; --lh-loose: 1.75;
-  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
-  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+  --fs-3xl: 3.75rem;
+  --fs-4xl: 5rem;
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-base: 1.55;
+  --lh-loose: 1.75;
+  --space-1: 4px;  --space-2: 8px;   --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px;  --space-7: 48px; --space-8: 64px;
   --space-9: 96px; --space-10: 128px;
-  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px; --radius-pill: 999px;
-  --shadow-card: 0 1px 2px rgba(42,29,18,0.06), 0 4px 12px rgba(42,29,18,0.06);
-  --shadow-card-hover: 0 2px 4px rgba(42,29,18,0.08), 0 12px 24px rgba(42,29,18,0.10);
-  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.5);
-  --ease-out: cubic-bezier(0.22,0.61,0.36,1);
-  --ease-in-out: cubic-bezier(0.65,0,0.35,1);
-  --dur-quick: 140ms; --dur-base: 220ms; --dur-slow: 360ms;
-  --oak-900: var(--walnut-900); --oak-800: var(--walnut-800); --oak-700: var(--walnut-700);
-  --oak-600: var(--walnut-600); --oak-500: var(--walnut-500); --oak-300: var(--walnut-300);
-  --oak-100: var(--walnut-100); --oak-050: var(--gold-050);
-  --stone-700: var(--walnut-700); --stone-900: var(--walnut-900);
-  --copper-700: var(--gold-700); --copper-500: var(--gold-500);
-  --copper-300: var(--gold-300); --copper-100: var(--gold-100);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(42, 29, 18, 0.06), 0 4px 12px rgba(42, 29, 18, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(42, 29, 18, 0.08), 0 12px 24px rgba(42, 29, 18, 0.10);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-quick: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
+  --oak-900: var(--walnut-900);
+  --oak-800: var(--walnut-800);
+  --oak-700: var(--walnut-700);
+  --oak-600: var(--walnut-600);
+  --oak-500: var(--walnut-500);
+  --oak-300: var(--walnut-300);
+  --oak-100: var(--walnut-100);
+  --oak-050: var(--gold-050);
+  --stone-700: var(--walnut-700);
+  --stone-900: var(--walnut-900);
+  --copper-700: var(--gold-700);
+  --copper-500: var(--gold-500);
+  --copper-300: var(--gold-300);
+  --copper-100: var(--gold-100);
 }
+
 html { color: var(--fg-primary); background: var(--bg-page); }
 body { font-family: var(--font-sans); font-size: var(--fs-base); line-height: var(--lh-base); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-h1,.h1,h2,.h2,h3,.h3,h4,.h4 { font-family: var(--font-display); font-weight: 500; color: var(--fg-brand); line-height: var(--lh-snug); letter-spacing: -0.005em; margin: 0 0 var(--space-4); }
-h1,.h1 { font-size: var(--fs-2xl); line-height: var(--lh-tight); letter-spacing: -0.01em; }
-h2,.h2 { font-size: var(--fs-xl); }
-h3,.h3 { font-size: var(--fs-lg); }
-h4,.h4 { font-size: var(--fs-md); font-weight: 600; }
-.hero-display { font-family: var(--font-display); font-weight: 500; font-size: clamp(var(--fs-2xl),5vw,var(--fs-3xl)); line-height: var(--lh-tight); color: var(--stone-050); letter-spacing: -0.01em; }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 { font-family: var(--font-display); font-weight: 500; color: var(--fg-brand); line-height: var(--lh-snug); letter-spacing: -0.005em; margin: 0 0 var(--space-4); }
+h1, .h1 { font-size: var(--fs-2xl); line-height: var(--lh-tight); letter-spacing: -0.01em; }
+h2, .h2 { font-size: var(--fs-xl); }
+h3, .h3 { font-size: var(--fs-lg); }
+h4, .h4 { font-size: var(--fs-md); font-weight: 600; }
+.hero-display { font-family: var(--font-display); font-weight: 500; font-size: clamp(var(--fs-2xl), 5vw, var(--fs-3xl)); line-height: var(--lh-tight); color: var(--stone-050); letter-spacing: -0.01em; }
 .eyebrow { font-family: var(--font-sans); font-size: var(--fs-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-500); }
 .lead { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-loose); color: var(--fg-secondary); }
-p,.body { font-size: var(--fs-base); line-height: var(--lh-base); }
+p, .body { font-size: var(--fs-base); line-height: var(--lh-base); }
 .body-lg { font-size: var(--fs-md); line-height: var(--lh-loose); }
 .pull-quote { font-family: var(--font-display); font-style: italic; font-size: var(--fs-lg); line-height: var(--lh-base); color: var(--fg-brand); border-left: 2px solid var(--gold-500); padding-left: var(--space-5); }
 .label { font-family: var(--font-sans); font-size: var(--fs-sm); font-weight: 500; color: var(--fg-secondary); }
@@ -99,6 +120,6 @@ p,.body { font-size: var(--fs-base); line-height: var(--lh-base); }
 a { color: var(--fg-link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { color: var(--fg-link-hover); text-decoration-thickness: 2px; }
 .surface-dark { background: var(--bg-surface-dark); color: var(--fg-on-dark); }
-.surface-dark h1,.surface-dark h2,.surface-dark h3,.surface-dark h4 { color: var(--stone-050); }
+.surface-dark h1, .surface-dark h2, .surface-dark h3, .surface-dark h4 { color: var(--stone-050); }
 .surface-dark .eyebrow { color: var(--gold-300); }
 .surface-dark a { color: var(--gold-300); }
