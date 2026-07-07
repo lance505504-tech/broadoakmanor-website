@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Frequently asked questions — Broad Oak Manor</title>
+<meta name="description" content="Honest answers to the questions most often asked about Broad Oak Manor — costs, care, visiting, moving in, and life on Broad Oak Lane."/>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="site.css"/>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+.faq-hero{padding:120px 0 60px;background:var(--stone-050);text-align:center;}
+.faq-search{background:var(--bg-surface);padding:32px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);position:sticky;top:64px;z-index:5;}
+.faq-search .wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;}
+.faq-search input{width:100%;padding:18px 24px 18px 56px;border:1px solid var(--line);background:var(--stone-050);font-family:var(--font-sans);font-size:16px;color:var(--fg-brand);}
+.faq-search input:focus{outline:none;border-color:var(--accent);}
+.faq-search .ic{position:absolute;left:44px;top:50%;transform:translateY(-50%);color:var(--fg-muted);pointer-events:none;}
+.faq-body{padding:80px 0 100px;background:var(--bg-surface);}
+.faq-body .container-narrow{max-width:880px;margin:0 auto;padding:0 24px;}
+.faq-cat{margin-bottom:64px;}
+.faq-cat .list{border-top:1px solid var(--line-soft);margin-top:28px;}
+.faq-cat details{border-bottom:1px solid var(--line-soft);padding:24px 0;}
+.faq-cat details[hidden]{display:none;}
+.faq-cat summary{display:flex;align-items:center;justify-content:space-between;gap:32px;cursor:pointer;list-style:none;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:22px;line-height:1.35;color:var(--fg-brand);}
+.faq-cat summary::-webkit-details-marker{display:none;}
+.faq-cat summary .toggle{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;font-family:var(--font-sans);font-size:20px;line-height:1;color:var(--fg-brand);}
+.faq-cat details[open] summary .toggle{background:var(--accent);color:var(--stone-050);border-color:var(--accent);}
+.faq-cat details summary .toggle::before{content:"+";}
+.faq-cat details[open] summary .toggle::before{content:"−";}
+.faq-cat details .answer{padding-top:20px;color:var(--fg-secondary);font-size:16px;line-height:1.75;max-width:64ch;}
+.faq-cat details .answer a{color:var(--accent);}
+.faq-empty{display:none;text-align:center;padding:64px 0;color:var(--fg-muted);font-family:var(--font-display);font-style:italic;font-size:20px;}
+.faq-empty.show{display:block;}
+.faq-ask{background:var(--walnut-900);color:var(--stone-050);padding:100px 0;}
+.faq-ask .container-narrow{max-width:720px;margin:0 auto;padding:0 24px;}
+.faq-ask h2{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(36px,4vw,56px);line-height:1.05;color:var(--stone-050);margin:0 0 20px;}
+.faq-ask h2 em{color:var(--gold-500);}
+.faq-ask textarea,.faq-ask input{width:100%;padding:18px 20px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.04);color:var(--stone-050);font-family:var(--font-sans);font-size:15px;}
+.faq-ask textarea::placeholder,.faq-ask input::placeholder{color:rgba(255,255,255,0.4);}
+.faq-ask textarea{min-height:120px;resize:vertical;}
+.faq-ask .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;}
+.faq-ask .actions{display:flex;gap:16px;align-items:center;margin-top:24px;}
+.faq-ask button.submit{background:var(--gold-500);color:var(--walnut-900);border:0;padding:16px 32px;font-family:var(--font-sans);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;cursor:pointer;display:inline-flex;align-items:center;gap:10px;}
+.faq-ask .thanks{margin-top:24px;padding:20px 24px;background:rgba(255,255,255,0.06);border-left:2px solid var(--gold-500);display:none;}
+.faq-ask .thanks.show{display:block;}
+.faq-ask .thanks .t{font-family:var(--font-display);font-style:italic;font-size:19px;margin-bottom:6px;color:var(--gold-500);}
+.faq-ask .thanks .d{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;}
+</style>
+</head>
+<body data-screen-label="07 FAQ">
+
+<section class="faq-hero">
+  <div style="max-width:760px;margin:0 auto;padding:0 24px;">
+    <div class="crumbs" style="display:flex;justify-content:center;gap:12px;color:var(--fg-muted);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:36px;"><a href="index.html" style="color:var(--fg-muted);text-decoration:none;">Home</a><span>/</span><span>FAQ</span></div>
+    <div class="eyebrow" style="justify-content:center;margin-bottom:22px;"><span class="num">vi.</span>Honest answers</div>
+    <h1 style="font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(48px,6vw,80px);line-height:1.02;color:var(--fg-brand);margin:0 0 24px;">Your <em style="color:var(--accent);">questions</em>, answered plainly.</h1>
+    <p style="font-size:18px;line-height:1.65;color:var(--fg-secondary);max-width:580px;margin:0 auto;">The questions we're most often asked — about costs, care, visiting, and life at the manor. If yours isn't here, scroll to the bottom and ask us directly.</p>
+  </div>
+</section>
+
+<section class="faq-search">
+  <div class="wrap">
+    <span class="ic"><i data-lucide="search" style="width:18px;height:18px;"></i></span>
+    <input type="search" id="faqSearch" placeholder="Search — costs, dementia, pets, visiting…" autocomplete="off"/>
+    <div id="faqCount" style="font-size:12px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.14em;margin-top:12px;padding-left:4px;"></div>
+  </div>
+</section>
+
+<section class="faq-body">
+  <div class="container-narrow">
+
+    <div class="faq-cat" data-cat="general">
+      <div class="eyebrow" style="margin-bottom:8px;"><span class="num">01</span>General</div>
+      <h2 style="font-family:var(--font-display);font-style:italic;font-size:clamp(28px,3vw,40px);color:var(--fg-brand);margin:0 0 8px;">About <em style="color:var(--accent);">the home</em>.</h2>
+      <div class="list">
+        <details><summary><span class="q">What about visiting?</span><span class="toggle"></span></summary><div class="answer">We operate an Open Door Policy. There are no fixed visiting hours — family and friends are welcome from early morning through to the evening (typically 8am–8pm). For visits outside those hours, particularly for end-of-life care, please call ahead.</div></details>
+        <details><summary><span class="q">Are you regulated, and what's your CQC rating?</span><span class="toggle"></span></summary><div class="answer">Yes. Broad Oak Manor is regulated by the Care Quality Commission. Our overall rating is Good — with the inspectors awarding us Outstanding in the Caring domain. You can read the full breakdown on our <a href="about.html#cqc">About page</a>, or read the full CQC report on the <a href="https://www.cqc.org.uk/location/1-128948967" target="_blank" rel="noopener">CQC website</a>.</div></details>
+        <details><summary><span class="q">How long has Broad Oak Manor been a care home?</span><span class="toggle"></span></summary><div class="answer">Since 1984. Broad Oak Manor began when our family couldn't find the kind of care we wanted for the people we loved — so we built it ourselves. Forty-plus years on, it's still family-owned, still in the same Queen Anne house, and still run on the same principles.</div></details>
+      </div>
+    </div>
+
+    <div class="faq-cat" id="nursing" data-cat="nursing">
+      <div class="eyebrow" style="margin-bottom:8px;"><span class="num">02</span>Nursing Home</div>
+      <h2 style="font-family:var(--font-display);font-style:italic;font-size:clamp(28px,3vw,40px);color:var(--fg-brand);margin:0 0 8px;">Care in the <em style="color:var(--accent);">manor</em>.</h2>
+      <div class="list">
+        <details><summary><span class="q">How much does it cost?</span><span class="toggle"></span></summary><div class="answer">Fees depend on the size of the room, the level of nursing care required, and whether the stay is permanent or respite. We are straightforward about pricing and will give you a written quote tailored to your circumstances shortly after a viewing. There are no hidden charges — what we quote is what you pay.</div></details>
+        <details><summary><span class="q">How quickly can someone move in?</span><span class="toggle"></span></summary><div class="answer">If a room is available and the assessment is straightforward, a placement can be arranged within a few days — including discharges from hospital. Our care manager will assess in person (or remotely from a ward), discuss with the family, and write a care plan before the move-in date.</div></details>
+        <details><summary><span class="q">Do you take residents with dementia?</span><span class="toggle"></span></summary><div class="answer">Yes. Our nursing team has specialist dementia experience, and the manor is laid out in a way that supports residents living with cognitive change — small communal spaces, familiar staff, and a calm rhythm to the day.</div></details>
+        <details><summary><span class="q">What if needs change over time?</span><span class="toggle"></span></summary><div class="answer">Our nursing care is designed to grow with you. As needs become more complex — including end-of-life — you stay in the room you know, with the team you know. We don't move people on. Continuity of place and people is, in our experience, one of the greatest comforts we can offer.</div></details>
+        <details><summary><span class="q">Can residents bring their own furniture?</span><span class="toggle"></span></summary><div class="answer">Yes, absolutely. We encourage it. Familiar pieces — a favourite armchair, photographs, a writing desk, art — make a room feel like home. We'll help work out what will fit and arrange the move-in.</div></details>
+      </div>
+    </div>
+
+    <div class="faq-cat" id="assisted" data-cat="assisted">
+      <div class="eyebrow" style="margin-bottom:8px;"><span class="num">03</span>Assisted Living</div>
+      <h2 style="font-family:var(--font-display);font-style:italic;font-size:clamp(28px,3vw,40px);color:var(--fg-brand);margin:0 0 8px;">Life on <em style="color:var(--accent);">Broad Oak Lane</em>.</h2>
+      <div class="list">
+        <details><summary><span class="q">Do I buy or rent the house?</span><span class="toggle"></span></summary><div class="answer">Houses on Broad Oak Lane are available on a 99-year leasehold. We're happy to talk you through the financials, including any options to release equity from your current home.</div></details>
+        <details><summary><span class="q">What does the care cost?</span><span class="toggle"></span></summary><div class="answer">If you choose a care package, the care fee is entirely separate from the cost of the house and is tailored to you — anywhere from one to 24 hours a day. You only pay for what you actually receive, and you can move up or down between Levels One, Two and Three as life changes.</div></details>
+        <details><summary><span class="q">What if my needs change?</span><span class="toggle"></span></summary><div class="answer">This is the central design of the Broad Oak Lane offer. You can start with no care at all and add a package when you're ready — or move between Levels One, Two and Three at any point, up or down, without moving house and without drama.</div></details>
+        <details><summary><span class="q">Can my partner live with me?</span><span class="toggle"></span></summary><div class="answer">Yes. The houses are designed for couples as well as single occupants. Many couples join us with one partner needing more support than the other, and the flexible care levels let each of you have what you need — without having to live separately.</div></details>
+        <details><summary><span class="q">What about pets?</span><span class="toggle"></span></summary><div class="answer">Cats and well-behaved dogs are welcome on Broad Oak Lane. We've had everything from a much-loved spaniel to a tortoise who lives in the back garden. Pets are part of what makes a house a home.</div></details>
+        <details><summary><span class="q">How does this compare to a retirement village?</span><span class="toggle"></span></summary><div class="answer">Broad Oak Lane is smaller, more private, and more carefully cared-for than the typical retirement village. The 29 houses sit within the grounds of a single listed manor, with one team running everything. There are no service charges hidden in a brochure — pricing is plain and on-the-table from the first conversation.</div></details>
+      </div>
+    </div>
+
+    <div class="faq-empty" id="faqEmpty">No matches. Try a shorter or different search term, or ask us directly below.</div>
+  </div>
+</section>
+
+<section class="faq-ask">
+  <div class="container-narrow">
+    <div class="eyebrow" style="color:var(--gold-500);margin-bottom:22px;"><span class="num" style="color:var(--gold-500);">04</span>Didn't find it?</div>
+    <h2>Ask us <em>directly</em>.</h2>
+    <p style="font-size:17px;line-height:1.7;color:var(--stone-200,#d6cdc1);margin:0 0 36px;max-width:560px;">If your question isn't here, tell us in your own words and we'll get a personal reply to you.</p>
+    <form id="askForm" autocomplete="off">
+      <textarea id="askQuestion" placeholder="What would you like to know?" required></textarea>
+      <div class="row">
+        <input type="text" id="askName" placeholder="Your name" required/>
+        <input type="email" id="askEmail" placeholder="Email address" required/>
+      </div>
+      <div class="actions">
+        <button type="submit" class="submit">Send my question <i data-lucide="arrow-right"></i></button>
+        <span style="font-size:12px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.14em;">No marketing follow-ups · ever.</span>
+      </div>
+    </form>
+    <div class="thanks" id="askThanks">
+      <div class="t">Thank you — your question is with us.</div>
+      <div class="d">A member of our management team will reply to you personally as soon as we can.</div>
+    </div>
+  </div>
+</section>
+
+<script>
+const FAQ_ITEMS = [...document.querySelectorAll('.faq-cat details')].map(d => ({ el: d, q: d.querySelector('.q').textContent.trim(), a: d.querySelector('.answer').textContent.trim() }));
+const searchInput = document.getElementById('faqSearch');
+const countEl = document.getElementById('faqCount');
+const emptyEl = document.getElementById('faqEmpty');
+function applyFilter() {
+  const raw = searchInput.value.trim().toLowerCase();
+  const terms = raw.split(/\s+/).filter(t => t.length >= 2);
+  let visible = 0;
+  FAQ_ITEMS.forEach(item => {
+    const hay = (item.q + ' ' + item.a).toLowerCase();
+    const matches = !terms.length || terms.every(t => hay.includes(t));
+    item.el.hidden = !matches;
+    if (matches) { visible++; if (terms.length) item.el.open = true; }
+  });
+  document.querySelectorAll('.faq-cat').forEach(cat => { cat.style.display = [...cat.querySelectorAll('details')].some(d => !d.hidden) ? '' : 'none'; });
+  emptyEl.classList.toggle('show', visible === 0);
+  countEl.textContent = raw ? visible + ' match' + (visible === 1 ? '' : 'es') + ' for "' + raw + '"' : '';
+}
+searchInput.addEventListener('input', applyFilter);
+
+document.getElementById('askForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const q = document.getElementById('askQuestion').value.trim();
+  const name = document.getElementById('askName').value.trim();
+  const email = document.getElementById('askEmail').value.trim();
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ access_key: '4506c885-05d5-4516-a8bb-a6e0d5b384f3', subject: 'FAQ question from ' + (name || 'a visitor'), from_name: 'Broad Oak Manor website', replyto: email, message: 'From: ' + name + ' <' + email + '>\n\nQuestion:\n' + q })
+  }).catch(function(){});
+  document.getElementById('askThanks').classList.add('show');
+  this.reset();
+});
+</script>
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+<script>window.initSite({ page: 'faq', heroTransparent: false });</script>
+</body>
+</html>
