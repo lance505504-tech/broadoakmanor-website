@@ -9,43 +9,58 @@
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script src="image-slot.js"></script>
 <style>
-  .gallery-grid { padding: 80px 0 120px; background: var(--stone-050); }
-  .gallery-grid .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .gallery-item { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--walnut-100); }
-  .gallery-item image-slot { width: 100%; height: 100%; position: absolute; inset: 0; }
-  .gallery-item:nth-child(4n+1) { grid-column: span 2; aspect-ratio: 16/9; }
-  @media (max-width: 760px) { .gallery-grid .grid { grid-template-columns: 1fr; } .gallery-item:nth-child(4n+1) { grid-column: span 1; aspect-ratio: 4/3; } }
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:32px;}
+.album-card{background:var(--bg-surface);border:1px solid var(--line-soft);display:flex;flex-direction:column;cursor:pointer;transition:box-shadow var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out);}
+.album-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-3px);}
+.album-card .cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--walnut-100);}
+.album-card .cover image-slot{width:100%;height:100%;position:absolute;inset:0;}
+.album-card .info{padding:26px 28px 30px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.album-card .foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-soft);}
+.album-card .foot .count{font-size:13px;color:var(--fg-muted);}
+.album-card .foot .open{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:18px;}
+.mosaic .tile{position:relative;overflow:hidden;background:var(--walnut-100);border:1px solid var(--line-soft);}
+.mosaic .tile image-slot{width:100%;height:100%;position:absolute;inset:0;}
+.mosaic .tile.wide{grid-column:span 2;}.mosaic .tile.tall{grid-row:span 2;}.mosaic .tile.big{grid-column:span 2;grid-row:span 2;}
+.album-view-bar{position:sticky;top:64px;z-index:20;background:rgba(251,248,241,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft);padding:22px 0;}
+.album-view-bar .container{display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
+.album-view-bar .back{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--fg-muted);padding:9px 16px;border:1px solid var(--line);border-radius:var(--radius-pill);cursor:pointer;}
+[hidden]{display:none!important;}
 </style>
 </head>
-<body data-screen-label="05 Gallery">
-<header class="page-header" style="padding:160px 0 60px;">
-  <div class="photo"><image-slot id="gallery-header" shape="rect" placeholder="A wide atmospheric exterior" src="barn-exterior-flowers.jpg"></image-slot></div>
+<body data-screen-label="08 Gallery">
+<header class="page-header index-el" style="padding:200px 0 80px;">
+  <div class="photo"><image-slot id="gallery-header" shape="rect" placeholder="A wide photo of the manor or grounds" src="exterior-manor.jpg"></image-slot></div>
   <div class="container">
     <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Gallery</span></div>
-    <div class="eyebrow"><span class="num">v.</span>The manor &amp; the lane</div>
-    <h1>A glimpse of <em>Broad Oak</em>.</h1>
+    <div class="eyebrow"><span class="num">vii.</span>In pictures</div>
+    <h1>A look <em>around</em>, and the <em>moments</em> we've marked.</h1>
+    <p class="lead">The grounds, the houses, the listed barn — and the open days, parties and gatherings that bring everyone together.</p>
   </div>
 </header>
-<section class="gallery-grid">
+<main class="index-el" id="albums-index" style="padding:110px 0 30px;">
   <div class="container">
-    <div class="grid">
-      <div class="gallery-item"><image-slot shape="rect" placeholder="The manor exterior" src="exterior-manor.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="The courtyard roses" src="courtyard-roses.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="The barn exterior with flowers" src="barn-exterior-flowers.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="A house on the lane" src="bungalow-exterior.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="A garden on the lane" src="bungalow-garden.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="Drawing room crafts" src="drawing-room-crafts.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="Drawing room group" src="drawing-room-group.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="Outdoor painting" src="outdoor-painting-sunny.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="Residents outdoor café" src="residents-outdoor-cafe.jpg"></image-slot></div>
-      <div class="gallery-item"><image-slot shape="rect" placeholder="Summer BBQ" src="summer-bbq-group.jpg"></image-slot></div>
+    <div style="max-width:720px;margin:0 auto 64px;text-align:center;">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:22px;"><span class="num">01</span>Our albums</div>
+      <h2>Five <em>albums</em> to look through.</h2>
+    </div>
+    <div class="album-grid" id="album-grid">
+      <article class="album-card" data-album="grounds" tabindex="0" role="button"><div class="cover"><image-slot id="g-cover-grounds" shape="rect" placeholder="The manor"></image-slot></div><div class="info"><div class="eyebrow">Around the manor</div><h3>The <em>manor &amp; grounds</em></h3><div class="foot"><span class="count">6 photos</span><span class="open">View album <i data-lucide="arrow-right"></i></span></div></div></article>
+      <article class="album-card" data-album="barn" tabindex="0" role="button"><div class="cover"><image-slot id="g-cover-barn" shape="rect" placeholder="The barn"></image-slot></div><div class="info"><div class="eyebrow">The heart of it</div><h3>The <em>listed barn</em></h3><div class="foot"><span class="count">5 photos</span><span class="open">View album <i data-lucide="arrow-right"></i></span></div></div></article>
+      <article class="album-card" data-album="broad-oak-lane" tabindex="0" role="button"><div class="cover"><image-slot id="g-cover-lane" shape="rect" placeholder="A house on the lane"></image-slot></div><div class="info"><div class="eyebrow">Assisted living</div><h3>Life on <em>Broad Oak Lane</em></h3><div class="foot"><span class="count">5 photos</span><span class="open">View album <i data-lucide="arrow-right"></i></span></div></div></article>
+      <article class="album-card" data-album="summer-2024" tabindex="0" role="button"><div class="cover"><image-slot id="g-cover-summer" shape="rect" placeholder="The summer party"></image-slot></div><div class="info"><div class="eyebrow">August 2024</div><h3>The <em>Summer Party</em>, 2024</h3><div class="foot"><span class="count">7 photos</span><span class="open">View album <i data-lucide="arrow-right"></i></span></div></div></article>
+      <article class="album-card" data-album="open-day-march-2026" tabindex="0" role="button"><div class="cover"><image-slot id="g-cover-openday" shape="rect" placeholder="The open day"></image-slot></div><div class="info"><div class="eyebrow">26 March 2026</div><h3>Assisted Living <em>Open Day</em></h3><div class="foot"><span class="count">3 photos</span><span class="open">View album <i data-lucide="arrow-right"></i></span></div></div></article>
     </div>
   </div>
-</section>
-<section class="contact-band">
-  <div class="container"><div class="inner"><div><div class="eyebrow">Open Door</div><h2>Come and <em>see for yourself</em>.</h2><p>Photos only get you so far. The manor, the grounds and the lane are best experienced in person.</p><div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost-light">Get in touch</a></div></div><div class="contact-list"><div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div><div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div></div></div></div>
-</section>
+</main>
+<section data-album-view="grounds" hidden class="album-view"><div class="album-view-bar"><div class="container"><button class="back" type="button" data-album-back><i data-lucide="arrow-left"></i>All albums</button><h2 style="font-size:26px;margin:0;">The <em style="color:var(--accent);">manor &amp; grounds</em></h2></div></div><div class="container" style="padding-top:48px;"><div class="mosaic"><div class="tile big"><image-slot id="g-grounds-1" shape="rect" placeholder="The manor facade"></image-slot></div><div class="tile"><image-slot id="g-grounds-2" shape="rect" placeholder="The gardens"></image-slot></div><div class="tile"><image-slot id="g-grounds-3" shape="rect" placeholder="A pathway"></image-slot></div><div class="tile wide"><image-slot id="g-grounds-4" shape="rect" placeholder="Wide grounds view"></image-slot></div><div class="tile"><image-slot id="g-grounds-5" shape="rect" placeholder="A quiet corner"></image-slot></div><div class="tile"><image-slot id="g-grounds-6" shape="rect" placeholder="Seasonal colour"></image-slot></div></div></div></section>
+<section data-album-view="barn" hidden class="album-view"><div class="album-view-bar"><div class="container"><button class="back" type="button" data-album-back><i data-lucide="arrow-left"></i>All albums</button><h2 style="font-size:26px;margin:0;">The <em style="color:var(--accent);">listed barn</em></h2></div></div><div class="container" style="padding-top:48px;"><div class="mosaic"><div class="tile tall"><image-slot id="g-barn-1" shape="rect" placeholder="The barn exterior"></image-slot></div><div class="tile"><image-slot id="g-barn-2" shape="rect" placeholder="The coffee lounge"></image-slot></div><div class="tile"><image-slot id="g-barn-3" shape="rect" placeholder="The dining hall"></image-slot></div><div class="tile wide"><image-slot id="g-barn-4" shape="rect" placeholder="Barn dressed for an event"></image-slot></div><div class="tile"><image-slot id="g-barn-5" shape="rect" placeholder="A detail"></image-slot></div></div></div></section>
+<section data-album-view="broad-oak-lane" hidden class="album-view"><div class="album-view-bar"><div class="container"><button class="back" type="button" data-album-back><i data-lucide="arrow-left"></i>All albums</button><h2 style="font-size:26px;margin:0;">Life on <em style="color:var(--accent);">Broad Oak Lane</em></h2></div></div><div class="container" style="padding-top:48px;"><div class="mosaic"><div class="tile wide"><image-slot id="g-lane-1" shape="rect" placeholder="Houses on the lane"></image-slot></div><div class="tile"><image-slot id="g-lane-2" shape="rect" placeholder="A front door"></image-slot></div><div class="tile"><image-slot id="g-lane-3" shape="rect" placeholder="A kitchen or living room"></image-slot></div><div class="tile"><image-slot id="g-lane-4" shape="rect" placeholder="A private garden"></image-slot></div><div class="tile"><image-slot id="g-lane-5" shape="rect" placeholder="A resident at home"></image-slot></div></div></div></section>
+<section data-album-view="summer-2024" hidden class="album-view"><div class="album-view-bar"><div class="container"><button class="back" type="button" data-album-back><i data-lucide="arrow-left"></i>All albums</button><h2 style="font-size:26px;margin:0;">The <em style="color:var(--accent);">Summer Party</em>, 2024</h2></div></div><div class="container" style="padding-top:48px;"><div class="mosaic"><div class="tile big"><image-slot id="g-summer-1" shape="rect" placeholder="The party in full swing"></image-slot></div><div class="tile"><image-slot id="g-summer-2" shape="rect" placeholder="Guests together"></image-slot></div><div class="tile"><image-slot id="g-summer-3" shape="rect" placeholder="Food and drink"></image-slot></div><div class="tile"><image-slot id="g-summer-4" shape="rect" placeholder="Music"></image-slot></div><div class="tile"><image-slot id="g-summer-5" shape="rect" placeholder="A candid moment"></image-slot></div><div class="tile wide"><image-slot id="g-summer-6" shape="rect" placeholder="The gardens"></image-slot></div><div class="tile"><image-slot id="g-summer-7" shape="rect" placeholder="Families in the afternoon"></image-slot></div></div></div></section>
+<section data-album-view="open-day-march-2026" hidden class="album-view"><div class="album-view-bar"><div class="container"><button class="back" type="button" data-album-back><i data-lucide="arrow-left"></i>All albums</button><h2 style="font-size:26px;margin:0;">Assisted Living <em style="color:var(--accent);">Open Day</em></h2></div></div><div class="container" style="padding-top:48px;"><div class="mosaic"><div class="tile wide"><image-slot id="g-openday-1" shape="rect" placeholder="Guests arriving"></image-slot></div><div class="tile"><image-slot id="g-openday-2" shape="rect" placeholder="Looking around"></image-slot></div><div class="tile"><image-slot id="g-openday-3" shape="rect" placeholder="The team welcoming visitors"></image-slot></div></div></div></section>
+<section class="contact-band"><div class="container"><div class="inner"><div><div class="eyebrow"><span class="num">vii.</span>See it for real</div><h2>Better in <em>person</em>.</h2><p>Photos only go so far. Come and walk around.</p><div class="actions"><a href="#" class="btn accent" data-open-qa>Find your path</a><a href="contact.html" class="btn ghost-light">Get in touch</a></div></div><div class="contact-list"><div class="item"><div class="ic"><i data-lucide="phone"></i></div><div class="body"><div class="l">Call</div><div class="v"><a href="tel:01992551900">01992 551900</a></div></div></div><div class="item"><div class="ic"><i data-lucide="mail"></i></div><div class="body"><div class="l">Email</div><div class="v"><a href="mailto:info@broadoakmanor.co.uk">info@broadoakmanor.co.uk</a></div></div></div></div></div></div></section>
 <script src="site.js"></script>
 <script>window.initSite({ page: 'gallery', heroTransparent: true });</script>
+<script>(function(){var ALBUMS=['grounds','barn','broad-oak-lane','summer-2024','open-day-march-2026'];var indexEls=document.querySelectorAll('.index-el');var views=document.querySelectorAll('[data-album-view]');function showIndex(){indexEls.forEach(function(el){el.hidden=false;});views.forEach(function(v){v.hidden=true;});}function openAlbum(id){var found=false;views.forEach(function(v){var match=v.getAttribute('data-album-view')===id;v.hidden=!match;if(match)found=true;});if(!found){showIndex();return;}indexEls.forEach(function(el){el.hidden=true;});window.scrollTo(0,0);}function route(){var id=(location.hash||'').replace('#','');if(ALBUMS.indexOf(id)!==-1)openAlbum(id);else showIndex();}document.getElementById('album-grid').addEventListener('click',function(e){if(e.target.closest('image-slot'))return;var card=e.target.closest('.album-card');if(card)location.hash=card.getAttribute('data-album');});document.querySelectorAll('[data-album-back]').forEach(function(btn){btn.addEventListener('click',function(){history.replaceState(null,'',location.pathname);showIndex();window.scrollTo(0,0);});});window.addEventListener('hashchange',route);route();if(window.lucide&&window.lucide.createIcons)window.lucide.createIcons();})();</script>
 </body>
 </html>
